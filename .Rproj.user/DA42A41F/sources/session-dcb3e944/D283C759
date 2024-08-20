@@ -3,7 +3,7 @@
     "path": "~/Downloads/Triz-git/intro_triz_book/about.qmd",
     "project_path": "about.qmd",
     "type": "quarto_markdown",
-    "hash": "1429715762",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1724167693005.0,
@@ -16,15 +16,15 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "cursorPosition": "565,275",
-        "scrollLine": "533"
+        "cursorPosition": "2,17",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1724167698,
+    "lastKnownWriteTime": 1724167935,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1724167698681,
+    "last_content_update": 1724167935,
     "read_only": false,
     "read_only_alternatives": []
 }

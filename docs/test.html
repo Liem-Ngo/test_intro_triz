@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>intro_triz_book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">intro_triz_book</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Chương 1: Giới thiệu về TRIZ</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./test.html" aria-current="page"> 
+<span class="menu-text">test</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lời-nói-đầu-cho-ấn-bản-này" id="toc-lời-nói-đầu-cho-ấn-bản-này" class="nav-link active" data-scroll-target="#lời-nói-đầu-cho-ấn-bản-này">Lời nói đầu cho ấn bản này</a></li>
+  <li><a href="#lời-nói-đầu-từ-ấn-bản-gốc-năm-1994" id="toc-lời-nói-đầu-từ-ấn-bản-gốc-năm-1994" class="nav-link" data-scroll-target="#lời-nói-đầu-từ-ấn-bản-gốc-năm-1994">Lời nói đầu từ ấn bản gốc năm 1994</a></li>
+  <li><a href="#chương-1-điều-không-thể" id="toc-chương-1-điều-không-thể" class="nav-link" data-scroll-target="#chương-1-điều-không-thể">Chương 1 Điều Không Thể</a></li>
+  <li><a href="#chương-2-một-số-ví-dụ-đơn-giản" id="toc-chương-2-một-số-ví-dụ-đơn-giản" class="nav-link" data-scroll-target="#chương-2-một-số-ví-dụ-đơn-giản">Chương 2 Một số ví dụ đơn giản</a></li>
+  <li><a href="#chương-3-các-mâu-thuẫn-kỹ-thuật" id="toc-chương-3-các-mâu-thuẫn-kỹ-thuật" class="nav-link" data-scroll-target="#chương-3-các-mâu-thuẫn-kỹ-thuật">Chương 3 Các mâu thuẫn kỹ thuật</a></li>
+  <li><a href="#chương-4-hãy-tự-suy-nghĩ" id="toc-chương-4-hãy-tự-suy-nghĩ" class="nav-link" data-scroll-target="#chương-4-hãy-tự-suy-nghĩ">Chương 4 Hãy tự suy nghĩ</a></li>
+  <li><a href="#chương-5-chồng-chéo-cái-không-thể-chồng-chéo-kết-hợp-cái-không-thể-kết-hợp" id="toc-chương-5-chồng-chéo-cái-không-thể-chồng-chéo-kết-hợp-cái-không-thể-kết-hợp" class="nav-link" data-scroll-target="#chương-5-chồng-chéo-cái-không-thể-chồng-chéo-kết-hợp-cái-không-thể-kết-hợp">Chương 5 Chồng chéo cái không thể chồng chéo (Kết hợp cái không thể kết hợp)</a></li>
+  <li><a href="#phần-2-kỷ-nguyên-của-các-hệ-thống-kỹ-thuật" id="toc-phần-2-kỷ-nguyên-của-các-hệ-thống-kỹ-thuật" class="nav-link" data-scroll-target="#phần-2-kỷ-nguyên-của-các-hệ-thống-kỹ-thuật">Phần 2 Kỷ nguyên của các Hệ thống Kỹ thuật</a></li>
+  <li><a href="#chương-6-thuyền-thuyền" id="toc-chương-6-thuyền-thuyền" class="nav-link" data-scroll-target="#chương-6-thuyền-thuyền">Chương 6 Thuyền + Thuyền</a></li>
+  <li><a href="#chương-7-một-số-điều-về-các-hệ-thống" id="toc-chương-7-một-số-điều-về-các-hệ-thống" class="nav-link" data-scroll-target="#chương-7-một-số-điều-về-các-hệ-thống">Chương 7 Một số điều về các Hệ thống</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<p>Dưới đây là bản dịch tiếng Việt của đoạn văn bản bạn cung cấp:</p>
+<section id="lời-nói-đầu-cho-ấn-bản-này" class="level2">
+<h2 class="anchored" data-anchor-id="lời-nói-đầu-cho-ấn-bản-này">Lời nói đầu cho ấn bản này</h2>
+<p>Hai năm đã trôi qua kể từ lần xuất bản đầu tiên của bản dịch này. Nhiều điều đã xảy ra với lý thuyết TRIZ. Nó đã phát triển nhanh chóng vượt ra ngoài ranh giới Nga ban đầu, vươn tới Hoa Kỳ, châu Âu, Ấn Độ, Trung Quốc, Đài Loan và nhiều nơi khác.</p>
+<p>Một số công ty với các nhà khoa học và chuyên gia TRIZ Nga đã bén rễ tại Hoa Kỳ, trở nên rất thành công trong việc áp dụng công nghệ TRIZ. Danh sách các công ty Mỹ cung cấp dịch vụ TRIZ được đặt ở Phụ lục 3.</p>
+<p>Invention Machine, Inc.&nbsp;(IM) từ Cambridge, Massachusetts, là công ty Nga đầu tiên quảng bá TRIZ tại Hoa Kỳ vào năm 1991. Ngày nay IM cung cấp phần mềm máy tính TRIZ và đào tạo. Họ cũng cung cấp dịch vụ TRIZ cho các công ty để giải quyết các vấn đề kỹ thuật.</p>
+<p>Ideation International, Inc.&nbsp;(III) có trụ sở tại Southfield, Michigan, là công ty Mỹ thứ hai được thành lập với các chuyên gia TRIZ Nga. III cung cấp đào tạo và tư vấn, và đã phát triển ba hệ thống giải pháp phần mềm dựa trên Windows.</p>
+<p>Technical Innovation Center, Inc.&nbsp;(TIC), một công ty khác của Massachusetts, kết hợp với Center for Technology Commercialization, một công ty chuyển giao công nghệ của NASA, đã trở thành nguồn chính thứ ba cho tư vấn, đào tạo và xuất bản TRIZ.</p>
+<p>Một số chuyên gia TRIZ Nga - Victor Fey từ Detroit, Michigan và Zinovy Roysen từ Seattle, Washington - cũng đã thành lập các nhóm tư vấn TRIZ riêng của họ, cung cấp dịch vụ đào tạo và giải quyết vấn đề.</p>
+<p>Các công ty Mỹ đã bắt đầu đưa đào tạo TRIZ vào cho các kỹ sư. GOAL/QPC, có trụ sở tại Methuen, Massachusetts, và American Supplier Institute (ASI) có trụ sở tại Detroit là các tổ chức đào tạo tích cực quảng bá TRIZ. Vào tháng 11 năm 1995, hơn 200 người đã tham dự hội thảo TRIZ do ASI tài trợ tại Detroit. Hội thảo này khẳng định lại TRIZ như một công cụ quan trọng cho đổi mới có hệ thống.</p>
+<p>Kể từ lần xuất bản đầu tiên của cuốn sách này, các tạp chí Machine Design và Industry Week đã xuất bản các bài báo về việc áp dụng thành công lý thuyết TRIZ trong các ngành công nghiệp Mỹ.</p>
+<p>Cuối cùng, một kế hoạch thành lập Viện Sáng tạo Kỹ thuật Altshuller đã ra đời. Viện, dự kiến sẽ đặt tại Massachusetts, sẽ là trung tâm dịch thuật và phát triển nghiên cứu và xuất bản TRIZ. Hy vọng rằng Viện sẽ điều phối việc chứng nhận các chuyên gia và giảng viên TRIZ, và sẽ giúp phát triển chương trình giảng dạy để đưa TRIZ vào các tổ chức học thuật Mỹ. Nó cũng sẽ thúc đẩy nghiên cứu mới về TRIZ để tiếp tục phát triển ở phương Tây cũng như phát triển các ứng dụng mới trong các lĩnh vực kỹ thuật và phi kỹ thuật.</p>
+<p>Cảm ơn Steven Rodman và Robyn Cutler vì công sức chỉnh sửa và thiết kế lại ấn bản mới này. Chúng tôi tin tưởng rằng cuốn sách này sẽ trở thành một lời giới thiệu về TRIZ được phổ biến rộng rãi hơn nữa trong thế giới phương Tây.</p>
+<p>Lev Shulyak Worcester, Massachusetts Tháng 1, 1996</p>
+</section>
+<section id="lời-nói-đầu-từ-ấn-bản-gốc-năm-1994" class="level2">
+<h2 class="anchored" data-anchor-id="lời-nói-đầu-từ-ấn-bản-gốc-năm-1994">Lời nói đầu từ ấn bản gốc năm 1994</h2>
+<p>“Mục đích duy nhất của tôi trong cuốn sách này là để chỉ ra rằng quá trình giải quyết các vấn đề kỹ thuật là điều mà bất kỳ ai cũng có thể tiếp cận được, quan trọng để học hỏi và rất dễ dàng để thực hiện.” H. Altov (Genrich Altshuller)</p>
+<p>“Mọi thứ nên được làm đơn giản nhất có thể, nhưng không đơn giản hơn thế.” Albert Einstein</p>
+<p>Ngày nay, tiến bộ kỹ thuật đang thay đổi bộ mặt của Trái đất với tốc độ ngày càng tăng. Các nhà khoa học đang tìm cách học nhiều hơn trong thời gian ngắn hơn, để ghi nhớ nhiều hơn và lâu hơn, để làm mọi thứ nhanh hơn, và còn nhiều điều khác nữa. Điều này tạo ra nhu cầu to lớn về nguồn cung cấp ý tưởng và giải pháp mới không ngừng tăng lên. Hơn nữa, khối lượng kiến thức và việc áp dụng kiến thức này để giải quyết các vấn đề kỹ thuật đang mở rộng nhanh chóng. Làm thế nào chúng ta có thể quản lý tất cả thông tin mới này và khiến nó trở nên hữu ích?</p>
+<p>Đáng tiếc là một trong những niềm tin ăn sâu mà nhiều người có là tính sáng tạo là bẩm sinh và do đó không thể được dạy hay học. Nhưng chúng ta không nhất quán. Trong khi chúng ta chống lại hoặc bỏ qua việc dạy tính sáng tạo kỹ thuật, chúng ta lại có các khóa học âm nhạc và nghệ thuật - và các trường học nhận tất cả các loại học sinh, không chỉ những người cực kỳ tài năng hay nghệ thuật.</p>
+<p>Vì vậy, chúng ta cũng cần các trường học và khóa học sẽ dạy chúng ta trở nên sáng tạo hơn hoặc đổi mới hơn và sẽ dạy chúng ta cách giải quyết các vấn đề kỹ thuật cũng như phi kỹ thuật một cách sáng tạo hơn. Chúng ta có thể làm điều này bằng cách cung cấp một lý thuyết mới để giải quyết các vấn đề kỹ thuật dựa trên kinh nghiệm của những người đã giải quyết các vấn đề thực tế. Lý thuyết này tồn tại và đã được sử dụng thành công bởi nhiều người ở nhiều quốc gia kể từ khi nó được Henry Altshuller của Liên Xô khởi xướng vào năm 1946. Hệ thống này đã lan rộng đến hơn 300 trường học, dạy cho nhiều người ở mọi lứa tuổi ở Liên Xô cũ, Phần Lan, Anh Quốc, Hungary và các nước khác.</p>
+<p>Bằng chứng về tầm quan trọng của nó có thể được tìm thấy trong thực tế là vào năm 1978, sinh viên của Đại học Dnepropetrovsk và các trường đại học khác ở Liên Xô cũ được yêu cầu phải vượt qua một bài kiểm tra về Lý thuyết Giải quyết Vấn đề Kỹ thuật này.</p>
+<p>Học sinh trẻ nhất của hệ thống là học sinh lớp năm và lớp sáu. Nó quá khó đối với trẻ em dưới các lớp này để học một lý thuyết, vì nó đòi hỏi một số kiến thức về vật lý để giải quyết các vấn đề đã cho.</p>
+<p>Tác giả, Henry Altshuller, là chủ tịch Hiệp hội Nhà Sáng chế Nga. Năm 1984, ông đã xuất bản cuốn sách “Và Đột nhiên Nhà Sáng chế Xuất hiện” (Nghệ thuật Sáng chế) trong đó ông mô tả các phần cơ bản của lý thuyết của mình bằng ngôn ngữ đơn giản.</p>
+<p>Nếu bạn là một nhà sáng chế hoặc một người thích giải quyết các vấn đề kỹ thuật thì đây là cuốn sách dành cho bạn.</p>
+<p>Bạn sẽ học được các khái niệm cơ bản của Lý thuyết Giải quyết Vấn đề Sáng tạo (TRIZ trong viết tắt tiếng Nga). Bạn sẽ tìm thấy 78 vấn đề thực tế và 27 công cụ thực hành để giải quyết chúng trong cuốn sách này.</p>
+<p>Đây là cuốn sách thực hành đầu tiên cho những người ở Mỹ muốn thử sức trong đại dương sáng chế. Đây là lý do tại sao tôi quyết định dịch nó.</p>
+<p>Trong một số câu trả lời cho các vấn đề, tác giả đề cập đến các phát minh đã được “cấp bằng sáng chế” ở Liên Xô. Đây không phải là bằng sáng chế thực sự như chúng ta hiểu thuật ngữ này. Chúng là cái gọi là “Giấy chứng nhận tác giả” - bằng sáng chế chỉ có giá trị ở Liên Xô.</p>
+<p>Trong bản dịch, tôi đã cố gắng giữ lại hương vị của văn bản gốc. Đôi khi điều đó là không thể. Để thích ứng cuốn sách này với độc giả Mỹ, tôi đã phải thực hiện một số thay đổi. Ba phụ lục đã được thêm vào. Phụ lục đầu tiên có câu trả lời cho tất cả các vấn đề trong văn bản. Phụ lục thứ hai chứa tất cả các phương pháp và thủ thuật mà tác giả đã mô tả trong cuốn sách của mình để giải quyết những vấn đề đó. Phụ lục thứ ba giải thích một số yếu tố của lý thuyết của tác giả.</p>
+<p>Kinh nghiệm đầu tiên của tôi trong việc học lý thuyết này diễn ra vào khoảng năm 1961. Tôi đang thiết kế một bộ chuyển đổi rất nhạy cảm và bị kẹt với một vấn đề không cho phép tôi đưa ra một công thức cuối cùng cho thiết kế. Sau đó, cuốn sách nhỏ đầu tiên của Henry Altshuller “Trở thành một Nhà Sáng chế” xuất hiện trên thị trường và cuốn sách này đã giúp tôi giải quyết vấn đề “không thể giải quyết” trong một thời gian ngắn. Kể từ đó, tôi đã được cấp bằng sáng chế cho hơn 20 phát minh - nhiều phát minh được phát triển nhờ lý thuyết này.</p>
+<p>Ngày nay, Đại học Wayne State ở Detroit là tổ chức Mỹ đầu tiên cung cấp các khóa học dạy Lý thuyết Giải quyết Vấn đề Sáng tạo sử dụng khái niệm của Altshuller. Một số sản phẩm phần mềm máy tính dựa trên TRIZ hiện đã có sẵn bằng tiếng Anh.</p>
+<p>Những người muốn hoàn thiện kiến thức của mình trong việc giải quyết vấn đề có thể làm như vậy thông qua các khóa học hiện có tại Trung tâm Đổi mới Kỹ thuật ở Worcester, Massachusetts.</p>
+<p>Tôi tin chắc rằng bạn sẽ thích đọc cuốn sách này và tôi chúc bạn thành công.</p>
+<p>Đã đến lúc đất nước chúng ta lấy lại vị trí dẫn đầu trong thế giới kỹ thuật.</p>
+<p>Lời cảm ơn đặc biệt của tôi đến Henry Altshuller, người đã cho phép tôi dịch cuốn sách của ông, đến Edith Morgan, Richard Langevin và Alexander Roghach - những biên tập viên của tôi - và đến vợ tôi vì sự kiên nhẫn và đánh giá cao của cô ấy về tầm quan trọng của công việc này.</p>
+<p>Lev Shulyak</p>
+<p>Dưới đây là bản dịch tiếng Việt của đoạn văn bản bạn yêu cầu:</p>
+</section>
+<section id="chương-1-điều-không-thể" class="level2">
+<h2 class="anchored" data-anchor-id="chương-1-điều-không-thể">Chương 1 Điều Không Thể</h2>
+<p>Lần đầu tiên tôi thấy một nhà phát minh là trước Thế chiến thứ hai. Chúng tôi sống ở Baku, nơi tôi là học sinh lớp bốn. Một ngày, trên đường về từ trường, tôi thấy một số thợ sửa chữa đang buồn bã hút thuốc bên cạnh một trạm biến áp điện bị hỏng. Họ đang nhìn vào một máy biến áp lớn màu đen đặt trên một nền gạch cao. Nền cao hơn một mét và máy biến áp trông như một tượng đài ấn tượng. Mọi người đang chờ một cần cẩu để đưa máy biến áp hỏng xuống và lắp đặt cái mới.</p>
+<p>Sau đó, tôi làm bài tập về nhà dưới ánh đèn dầu. Chúng tôi không có điện tối hôm đó, cũng không có vào tối hôm sau, và cả tối thứ ba. Vào thời đó, cần cẩu được coi là thiết bị rất hiếm và quý giá, và việc có được một chiếc không phải là chuyện đơn giản. Các thợ điện phàn nàn về tình hình và không biết khi nào họ có thể hoàn thành công việc.</p>
+<p>Tôi không nhận ra rằng một nhà phát minh sống ở Căn hộ số 11. Có tin đồn rằng người hàng xóm này, một kế toán viên, vào ngày hôm sau sẽ đưa máy biến áp xuống khỏi nền. Mỗi người thuê nhà trong tòa nhà của chúng tôi đều có biệt danh. Một số người được gọi rất tôn trọng như “Chú Kostya” hoặc “Chú Vlad” - nhưng người kế toán chỉ đơn giản là “Kế toán”.</p>
+<p>Ngày hôm sau tôi bỏ tiết học cuối cùng vì tò mò muốn xem Kế toán sẽ hạ chiếc máy biến áp nặng đó như thế nào. Tôi đến đúng lúc. Tại lối vào sân sau của chúng tôi đứng một xe ngựa chở đầy đá. Công nhân đang dỡ đá và đặt nó bên cạnh nền của máy biến áp.</p>
+<p>Trước tiên tôi phải giải thích điều gì đó: Vào thời đó chúng tôi không có tủ lạnh điện. Mỗi ngày, từ mùa xuân đến mùa thu, một xe ngựa đi từ nhà này sang nhà khác phân phát những khối đá xanh. Các gia đình mua đá và đổ đầy vào các hộp gỗ. Đôi khi họ chỉ đổ đầy xô và nồi bằng đá.</p>
+<p>Khi công nhân mang các khối đá đến máy biến áp, Kế toán xếp chúng cạnh nền. Khi nền mới làm bằng đá đạt đến cùng độ cao với nền gạch, Kế toán đặt một tấm ván gỗ lên trên đá. Các công nhân sử dụng đòn bẩy, từ từ, centimet từng centimet, di chuyển máy biến áp từ nền gạch sang nền đá.</p>
+<p>Đá kêu lên tiếng kêu răng rắc. Tuy nhiên, vì các khối đá được đặt rất chính xác nên nền đông đá không bị đổ. Cuối cùng, Kế toán đích thân phủ đá bằng một miếng vải. Tất cả chúng tôi đứng và quan sát. Chẳng bao lâu sau, một dòng nước nhỏ xuất hiện trên mặt đất từ đá đang tan chảy. Ban đầu dòng chảy nhỏ. Sau đó nó ngày càng lớn hơn - vì mặt trời tháng Chín ở Baku vẫn mạnh như mùa hè.</p>
+<p>Mọi người trong sân, thậm chí cả một ông già hay gây gổ với biệt danh “Kho báu” (ông ta chắc chắn rằng mình biết nơi cất giấu những kho báu lớn nhất nhưng có một vấn đề: Ông ta không có tiền để đến đó) đều nói rằng đá là một ý tưởng rất hay. Chú Michael - bây giờ mọi người gọi người kế toán bằng tên - ngồi trên ghế xếp đọc báo. Thỉnh thoảng ông mở một bên của tấm vải để nhìn vào đá đang tan chảy.</p>
+<p>Sáng hôm sau tôi chạy ra sân. Máy biến áp đã hạ xuống được một nửa. Mặc dù là Chủ nhật nhưng các công nhân vẫn có mặt ở đó. Một dòng sông nước chảy từ dưới tấm vải che. Tôi bị sửng sốt. Mọi người đều biết đá tan chảy và tôi cũng biết điều đó. Không ai nghĩ ra rằng một máy biến áp có thể được di chuyển lên một khối đá - và đá sẽ hạ máy biến áp xuống đất. Làm sao Chú Michael và không ai khác nghĩ ra điều đó?</p>
+<p>Trước đây, đá chỉ là đá thông thường chỉ dùng để làm lạnh đồ vật. Nhưng bây giờ đá có thể thay thế một cần cẩu. Tại sao, đá có thể làm được những việc khác - và không chỉ là đá! Đột nhiên ý tưởng ấy đánh vào tôi rằng có lẽ bất cứ thứ gì cũng có thể được sử dụng cho các mục đích khác với mục đích mà nó được tạo ra.</p>
+<p>Một từ xuất hiện trong đầu tôi: Phát minh. Tôi nghĩ rằng Chú Michael đã tạo ra một phát minh và do đó ông đã trở thành một Nhà Phát minh. Có lẽ ai đó sẽ viết một bài báo về ông, đặc biệt nếu ông có thể tìm ra cách nâng một máy biến áp mới lên nền gạch.</p>
+<p>Tuy nhiên vào thứ Hai, cần cẩu đã đến. Máy biến áp mới được đặt lên nền và cái cũ được mang đi. Các thợ điện kết nối máy biến áp mới, thợ mộc xây lại trạm và thợ sơn sơn nó. Công việc đã hoàn thành. Nhưng tôi sẽ luôn nhớ rằng trong bất kỳ hoàn cảnh nào, kể cả những trường hợp ‘vô vọng’, một giải pháp cho vấn đề có thể được tìm thấy. Điều gì đó có thể được phát minh và điều đó có thể rất đơn giản và đáng ngạc nhiên một cách tuyệt vời.</p>
+<p>Tôi nhận được bằng sáng chế đầu tiên khi đang học lớp mười. Sau đó có những phát minh khác. Tôi làm việc tại văn phòng sáng chế và có cuộc gặp với các nhà phát minh khác nhau. Tôi ngày càng quan tâm hơn đến cơ chế sáng tạo: Làm thế nào để tạo ra các phát minh? Điều gì xảy ra trong đầu của nhà phát minh? Tại sao một giải pháp lại xuất hiện đột ngột?</p>
+<p>Bạn có muốn trở thành một nhà phát minh không? Nếu vậy, hãy thử giải quyết vấn đề sau đây:</p>
+<p>Dưới đây là bản dịch tiếng Việt của đoạn văn bản bạn yêu cầu:</p>
+<p>Vấn đề 1 Phá vỡ hay không phá vỡ?</p>
+<p>Một lần nọ, giám đốc một nhà máy sản xuất bóng đèn điện triệu tập nhân viên kỹ thuật của mình để họp. Ông cho họ xem một bó thư. “Đây là những khiếu nại của khách hàng,” ông nói. “Họ không hài lòng với bóng đèn của chúng ta. Chúng ta phải tăng chất lượng sản phẩm. Tôi nghĩ có vấn đề với áp suất bên trong bóng đèn. Đôi khi áp suất cao hơn bình thường, đôi khi thấp hơn. Có ai nghĩ ra cách đo áp suất bên trong bóng đèn không?”</p>
+<p>“Rất đơn giản,” một kỹ sư nói. “Lấy bóng đèn, đập vỡ nó và…”</p>
+<p>“Đập vỡ nó ư?” giám đốc kêu lên.</p>
+<p>“Để kiểm tra chất lượng, chúng ta sẽ chỉ đập vỡ một bóng đèn trong số một trăm,” kỹ sư trả lời.</p>
+<p>“Chúng ta phải kiểm tra mọi bóng đèn,” giám đốc nói một cách tuyệt vọng. Ông quay sang các kỹ sư và nói, “Hãy suy nghĩ kỹ.”</p>
+<p>Và đột nhiên nhà phát minh xuất hiện.</p>
+<p>“Vấn đề này dành cho học sinh,” ông nói. “Mở sách giáo khoa…”</p>
+<p>Và ông giải thích nơi tìm thấy câu trả lời gần như hoàn chỉnh cho vấn đề này.</p>
+<p>Bạn có thể đề xuất gì? Bạn có ý tưởng nào về cách đo áp suất bên trong bóng đèn không?</p>
+<p>Sau vài giờ suy nghĩ, có thể lập một danh sách từ năm đến mười giải pháp cho vấn đề này. Thường thì những ý tưởng này rất yếu. Thường thì người ta đề nghị cân bóng đèn. Về lý thuyết, điều này có thể thực hiện được nếu bạn biết trọng lượng của bóng đèn rỗng và thể tích của bầu thủy tinh. Bạn có thể cân bóng đèn với khí và từ đó tính toán lượng khí.</p>
+<p>Trong thực tế, giải pháp này không khả thi. Có rất ít khí trong bóng đèn - một phần mười, hoặc thậm chí một phần nghìn gram. Cần một cân đặc biệt để đo loại trọng lượng này để đo các sai lệch so với mức bình thường. Sẽ mất rất nhiều thời gian để thực hiện các phép đo và tính toán này. Nó có thể tốt trong phòng thí nghiệm nhưng không phải trong nhà máy sản xuất.</p>
+<p>Ngay cả một nhà phát minh có kinh nghiệm cũng sẽ không tìm ra giải pháp tối ưu ngay lập tức. Không hài lòng với một giải pháp, nhà phát minh sẽ tiếp tục phân tích ý tưởng này đến ý tưởng khác. Nhà phát minh sẽ suy nghĩ về vấn đề ngày đêm. Mọi thứ nhà phát minh thấy sẽ được sử dụng trong nỗ lực tinh thần để giải quyết vấn đề.</p>
+<p>Nếu trời tuyết rơi, nhà phát minh nghĩ đến cái lạnh. Nếu chúng ta làm lạnh bóng đèn thì sao? Khí sẽ trở thành chất lỏng và sẽ dễ dàng đo thể tích của nó.</p>
+<p>Một chiếc xe buýt đầy người đi qua. Tiếng ồn, âm thanh… Nếu chúng ta sử dụng siêu âm thì sao? Tốc độ âm thanh phụ thuộc vào mật độ của khí.</p>
+<p>Có một trận bóng đá trên TV. Nếu đặt một quả bóng nhỏ trong bóng đèn thì sao? Tốc độ rơi của nó phụ thuộc vào mật độ của khí.</p>
+<p>Và cứ thế ngày qua ngày, tháng qua tháng, năm qua năm - đôi khi suốt cả cuộc đời. Đôi khi cuộc đời của nhà phát minh không đủ dài, và các nhà phát minh khác phải tiếp nhận vấn đề và tiếp tục tìm kiếm giải pháp. “Nếu chúng ta làm theo cách này thì sao?” nhà phát minh tiếp theo hỏi.</p>
+<p>Thường xảy ra tình huống là khi đã đi được nửa chặng đường đến giải pháp, vấn đề bị gác lại với kết luận rằng nó không thể giải quyết được, rằng chúng ta không thể làm gì được. Bạn có thể tưởng tượng một nhà khoa học nói: “Để đạt được tốc độ vượt qua rào cản âm thanh, chúng ta phải nghiên cứu các vận động viên chạy và điền kinh. Một vận động viên chạy nước rút giỏi khác với một vận động viên kém ở điểm nào? Bí quyết của việc chạy nhanh là gì? Đây là những điều tôi cần biết.”</p>
+<p>Các vận động viên chạy đều khác nhau và quan trọng hơn là kết quả của một nghiên cứu như vậy không thể được sử dụng để xây dựng một máy bay siêu âm. Cần những nguyên tắc khác.</p>
+<p>Phương pháp thử và sai này có nguồn gốc từ thời cổ đại. Về bản chất, nó cũ như nhân loại. Mọi thứ thay đổi theo thời gian nhưng phương pháp thử và sai vẫn giữ nguyên. Một nhà khoa học nổi tiếng thời đại chúng ta, Giáo sư B. Ginsburg, đã nói: “Các phát minh của tôi là kết quả của việc sắp xếp các ý tưởng khác nhau.” Vào cuối thế kỷ 20, giáo sư tìm kiếm câu trả lời bằng cách sắp xếp các ý tưởng khác nhau! Điều này chính xác như cách nó đã được thực hiện hai nghìn, hai mươi nghìn, hai trăm nghìn năm trước.</p>
+<p>Vì vậy chúng ta phải tìm kiếm một cách tốt hơn để giải quyết các vấn đề kỹ thuật.</p>
+<p>Sự tiến hóa kỹ thuật có những đặc điểm và quy luật riêng của nó. Đó là lý do tại sao các nhà phát minh khác nhau ở các quốc gia khác nhau làm việc độc lập trên cùng một vấn đề kỹ thuật, lại đưa ra cùng một câu trả lời. Điều này có nghĩa là có những quy luật nhất định tồn tại. Nếu chúng ta có thể tìm ra những quy luật này, thì chúng ta có thể sử dụng chúng để giải quyết các vấn đề kỹ thuật - bằng quy tắc, bằng công thức, mà không lãng phí thời gian vào việc sắp xếp các phương án.</p>
+<p>Tất nhiên, nhiều người hoài nghi chế giễu: “Ý anh là chúng ta có thể dạy mọi người phát minh ư!” Tôi đã nghiên cứu lý thuyết giải quyết vấn đề kỹ thuật không phải một năm, không phải hai năm, mà là cả đời. Ban đầu tôi làm việc một mình, sau đó những người khác tham gia. Thông qua nỗ lực của chúng tôi, một lý thuyết mới đã được phát triển. Sách đã được xuất bản, sách giáo khoa được viết, các vấn đề được phân loại, các hội thảo được bắt đầu và các trường học được mở. Hiện tại, kỹ thuật giải quyết vấn đề độc đáo này được giảng dạy tại hơn 300 trường học ở Nga.</p>
+<p>Lý thuyết phát minh có thể được dạy ở bất kỳ độ tuổi nào - nhưng giống như trong thể thao, càng sớm càng tốt. Chúng tôi nhận thấy rằng các kỹ sư chuyên nghiệp là nhóm dễ dạy nhất lúc ban đầu. Bởi vì lý thuyết đang trong giai đoạn hình thành, kinh nghiệm giúp ích trong việc giải quyết vấn đề. Khi lý thuyết trở nên mạnh mẽ hơn, chúng tôi bắt đầu dạy các kỹ sư trẻ hơn, và sau đó là sinh viên. Sau đó chúng tôi mời học sinh trung học tham gia vào các nhóm đại học. Năm 1974, một tạp chí dành cho thanh thiếu niên bắt đầu xuất bản các vấn đề của nhà phát minh. Đó là những vấn đề kỹ thuật thực tế rất giống với vấn đề đo áp suất bên trong bóng đèn điện. Nhà xuất bản nhận được hàng nghìn lá thư với các giải pháp tiềm năng. Chúng tôi phân tích chúng, đưa ra nhận xét về những sai lầm điển hình, giải thích các phần nhỏ của lý thuyết, và xuất bản một vấn đề mới trong số tiếp theo.</p>
+<p>Chúng tôi chưa thể dạy trẻ em ở mẫu giáo. Giới hạn của chúng tôi là học sinh lớp năm và lớp sáu. Để học lý thuyết phát minh, cần biết một chút về vật lý và hóa học, và điều này không được dạy ở mẫu giáo. Để vượt qua rào cản này, chúng ta cần đưa ra các vấn đề vui nhộn thay vì những vấn đề nghiêm túc.</p>
+<p>Ví dụ, hãy tưởng tượng một căn phòng trống với chỉ một con búp bê nằm trên bậu cửa sổ và hai sợi dây thừng treo từ trần nhà. Nhiệm vụ của chúng ta là nối các đầu dưới của dây thừng. Cầm đầu của một sợi dây, một người không thể với tới đầu của sợi dây kia. Ai đó, hoặc cái gì đó, phải giúp đưa đầu của sợi dây thứ hai lại gần. Nhiệm vụ này dành cho một người và không có ai giúp đỡ.</p>
+<p>Giải pháp có thể được tìm ra bởi trẻ em không có kiến thức về vật lý. Sợi dây thứ hai phải được di chuyển - nhưng nó quá nhẹ. Nó cần có trọng lượng ở đầu dưới để tạo ra hiệu ứng con lắc. Con búp bê có thể là trọng lượng đó. Thế là xong. Vấn đề đã được giải quyết.</p>
+<p>Vấn đề này có thể được làm cho khó hơn nếu chúng ta đặt hai quả bóng bay cùng với con búp bê trong phòng. Bóng bay không phải là trọng lượng tốt vì chúng quá nhẹ. Bóng bay sẽ thu hút sự chú ý của trẻ, và con búp bê sẽ không được xem xét trong một thời gian.</p>
+<p>Chúng ta thậm chí có thể làm phức tạp hóa nhiệm vụ hơn nữa. Hãy lấy tất cả các vật thể ra khỏi phòng và xem liệu đứa trẻ có thể nghĩ ra cách sử dụng một chiếc giày làm trọng lượng hay không. Bạn có thể thấy rằng, một mặt, vấn đề này không phải là phát minh. Tuy nhiên, mặt khác, nó giống với một vấn đề phát minh. Chúng ta sẽ nói về những điểm tương đồng này sau. Bây giờ chúng ta chỉ có thể nói rằng không có rào cản nào ngăn cách những vấn đề này.</p>
+<p>Dưới đây là bản dịch tiếng Việt của đoạn văn bản bạn yêu cầu:</p>
+<p>Trong cuốn sách này, chúng ta sẽ chỉ nói về sáng tạo kỹ thuật và tính phát minh. Tất nhiên, cuốn sách này không phải là một cuốn sách giáo khoa. Ý định duy nhất của tôi là để chỉ ra rằng quá trình giải quyết các vấn đề kỹ thuật là điều mà bất kỳ ai cũng có thể tiếp cận được, rằng quá trình này quan trọng cần phải học và rằng nó rất thú vị.</p>
+</section>
+<section id="chương-2-một-số-ví-dụ-đơn-giản" class="level2">
+<h2 class="anchored" data-anchor-id="chương-2-một-số-ví-dụ-đơn-giản">Chương 2 Một số ví dụ đơn giản</h2>
+<p>Bất chấp những khó khăn, tôi sẽ cố gắng thuyết phục bạn rằng một số vấn đề sau đây thực sự là những phát minh và những giải pháp mà các nhà phát minh đã tìm ra được phân loại là phát minh. Bạn có thể giải quyết những vấn đề này ngay bây giờ mà không cần học lý thuyết. Bạn đã có đủ kiến thức và kinh nghiệm để làm việc với chúng.</p>
+<p>Vấn đề 2 Có một “mánh khóe” liên quan</p>
+<p>Đó là sinh nhật của một cô gái trẻ. Một trong những vị khách mang đến một hộp kẹo sô-cô-la lớn. Những viên kẹo có hình dạng như những chai nhỏ đầy xi-rô mâm xôi đặc. Mọi người đều thích chúng. Một vị khách nói, “Tôi tự hỏi làm thế nào để làm ra những viên kẹo này?”</p>
+<p>“Trước tiên họ làm các chai và sau đó họ đổ đầy xi-rô vào!” một vị khách khác giải thích.</p>
+<p>“Xi-rô phải rất đặc, nếu không kẹo sẽ không đủ chắc,” vị khách thứ ba nói. “Đồng thời, sẽ rất khó để đổ xi-rô vào chai. Có thể làm ấm xi-rô để nó lỏng hơn. Vấn đề bây giờ là xi-rô sẽ làm tan chảy chai sô-cô-la. Chúng ta sẽ được về số lượng nhưng mất về chất lượng. Sẽ có nhiều kẹo bị lỗi.” Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Tôi có một ý tưởng!” anh ta kêu lên. “Tôi biết cách làm loại kẹo này nhanh chóng và không có lỗi. Mánh khóe là…”</p>
+<p>Anh ta giải thích mọi thứ. Tất nhiên, kẹo có thể được sản xuất một cách đơn giản. Hãy suy nghĩ về nó. Nhà phát minh đã đề xuất điều gì?</p>
+<p>Vấn đề này đã được đăng trên tạp chí thanh niên Komsomolskaya Pravda. Có hàng nghìn lá thư trả lời, và hầu như tất cả đều có câu trả lời đúng. Có lẽ bạn đã hiểu ra mánh khóe là gì: Xi-rô nên được đổ vào khuôn, đông lạnh và sau đó nhúng vào sô-cô-la nóng chảy. Xi-rô đông đá trong sô-cô-la ấm chính là phát minh. Điều này đã được thực hiện tại Viện Hóa học ở Estonia.</p>
+<p>Có một tạp chí khác gọi là Công báo Chính thức. Hàng nghìn phát minh được công bố trong tạp chí này cứ hai tuần một lần. Các mô tả về những phát minh này đôi khi rất dài dòng nhưng cuối cùng chứa đựng bản chất của phát minh. Trong bất kỳ số nào của tạp chí, ba đến năm phần trăm các phát minh có thể được phát triển bởi trẻ em trong độ tuổi đi học. Những phát minh này không đòi hỏi kiến thức đặc biệt về vật lý hoặc hóa học. Chúng là những phát minh nhỏ, tất nhiên, nhưng chúng là phát minh! Những ý tưởng này vừa mới vừa hữu ích.</p>
+<p>Điều gì sẽ xảy ra nếu chúng ta cho trẻ em thậm chí chỉ một chút kiến thức?!</p>
+<p>Vấn đề 3 Chúng ta nên chọn vị trí nào?</p>
+<p>Có một tháp cổ ở quảng trường trung tâm của một thị trấn. Một ngày nọ, người ta lo ngại rằng tháp đang bị nghiêng. Một ủy ban được thành lập để nghiên cứu xem tháp có thực sự đang nghiêng hay không. Tất cả thành viên của ủy ban đồng ý rằng để tiến hành đo đạc, họ cần tìm một điểm cố định - một điểm sẽ không di chuyển và có thể nhìn thấy từ tháp.</p>
+<p>Có thể chính quảng trường và các tòa nhà xung quanh cũng đang bị lún. Một công viên cách đó khoảng một nghìn năm trăm feet có một số bậc thang không bị lún. Tuy nhiên, bạn không thể nhìn thấy bậc thang công viên từ tháp vì các tòa nhà cao.</p>
+<p>“Một tình huống rất phức tạp,” chủ tịch ủy ban nói, suy ngẫm về câu hỏi, “Có lẽ chúng ta nên hỏi các nhà khoa học của chúng ta?”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Đừng làm phiền họ!” anh ta nói. “Hãy mở sách giáo khoa vật lý lớp sáu và bạn sẽ thấy rằng…”</p>
+<p>Và anh ta giải thích cần tìm gì. Bạn có ý tưởng nào không?</p>
+<p>Có lẽ bạn đã hiểu ra rồi. Nếu không, đừng thất vọng. Hãy mở một cuốn sách giáo khoa vật lý và tìm phần nói về thiết bị cân bằng nước.</p>
+<p>Hãy lấy hai ống thủy tinh, đặt một cái trong tháp và cái kia trong công viên trên bậc thang. Nối chúng bằng một ống mềm và đổ đầy hệ thống bằng nước. Bởi vì đây là một thiết bị cân bằng nước, mực nước sẽ ở cùng một độ cao so với mực nước biển. Hãy đánh dấu các mức. Nếu tháp đang nghiêng, mực nước trong ống thủy tinh ở tháp cuối cùng sẽ dâng lên trên dấu ban đầu.</p>
+<p>Một phát minh rất thông minh và chỉ sử dụng kiến thức vật lý lớp sáu.</p>
+<p>Hãy làm một bài toán phức tạp hơn.</p>
+<p>Dưới đây là bản dịch tiếng Việt của đoạn văn bản bạn yêu cầu:</p>
+<p>Vấn đề 4 “A” và “B” đang ngồi trên hàng rào</p>
+<p>Trong một phòng thí nghiệm hóa học, các kỹ sư đang xây dựng một máy để sản xuất phân bón mới. Hai thành phần lỏng sẽ được phân tán riêng biệt thành một sương mù mịn bởi máy này. Hãy gọi những chất lỏng này là “A” và “B”. Theo kế hoạch của các nhà hóa học, những giọt “A” được cho là sẽ di chuyển về phía những giọt “B”, tạo thành những giọt mới “AB”, tức là phân bón mới. Khi máy được bật lên, các giọt “A” tiếp xúc với các giọt “A” khác và tạo ra các giọt “AA”. Điều tương tự xảy ra với các giọt “B”. Nhưng các nhà hóa học không muốn có các giọt “AA” và “BB”.</p>
+<p>“Có lẽ chúng ta nên trộn chất lỏng”A” và “B” trước khi tạo ra các giọt,” một nhà hóa học nói.</p>
+<p>“Không, chúng ta không thể trộn chúng trước khi phân tán,” nhà hóa học khác nói. “Tôi không biết phải làm gì!”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Hãy lấy cuốn sách giáo khoa vật lý. Bạn sẽ tìm thấy quy luật mà bạn cần để giải quyết vấn đề này.”</p>
+<p>Bạn nghĩ anh ta đang nói về quy luật nào?</p>
+<p>Nếu bạn nhìn vào một cuốn sách vật lý, bạn có thể dễ dàng tìm thấy quy luật đơn giản này. Các hạt có cùng điện tích đẩy nhau và các hạt có điện tích khác nhau thì hút nhau. Hãy tích điện dương cho các giọt “A” và tích điện âm cho các giọt “B”. Khi hai luồng giọt gặp nhau, chúng ta sẽ chỉ có các giọt “AB”. Bạn có thể thấy rằng sự khéo léo cộng với một số kiến thức vật lý sẽ giúp giải quyết khoảng năm đến mười phần trăm các vấn đề phát minh thực tế. Điều gì sẽ xảy ra nếu ngoài ra chúng ta sử dụng một số kỹ thuật đặc biệt?</p>
+<p>Mỗi nghề nghiệp đều có những quy tắc, kỹ thuật và thủ thuật riêng giúp làm công việc tốt hơn, nhanh hơn và dễ dàng hơn. Điều tương tự cũng đúng với việc giải quyết các vấn đề phát minh. Nhân tiện, chúng ta đã học được một số trong số đó.</p>
+<p>Bạn có nhớ Vấn đề 2 với kẹo và xi-rô không? Nhà phát minh đã nói, “Mánh khóe là…” “Mánh khóe” là phương pháp, cách giải quyết vấn đề. Vấn đề với kẹo có hai mánh khóe. Thứ nhất là mọi người đều muốn làm ấm xi-rô. Tuy nhiên, Nhà Phát minh đề xuất hành động ngược lại - làm lạnh hoặc thậm chí đông lạnh nó. Mánh khóe thứ hai là biết rằng xi-rô đông lạnh sẽ tan chảy ở nhiệt độ phòng. Đối tượng đã thay đổi trạng thái tính chất vật lý của nó. Cùng một sự chuyển đổi đã xảy ra trong vấn đề mà Kế toán đã giải quyết. Đá tan chảy và máy biến áp từ từ hạ xuống.</p>
+<p>Nhiều phương pháp dựa trên việc áp dụng các hiệu ứng và quy luật vật lý. Phương pháp khác với hiệu ứng và quy luật vật lý vì phương pháp nhằm giải quyết các vấn đề phát minh kỹ thuật. Quy luật vật lý nói rằng vật chất có thể được chuyển đổi từ trạng thái này sang trạng thái khác. Phương pháp chỉ ra rằng trong quá trình chuyển đổi như vậy, các tính chất vật lý của vật chất thay đổi đáng kể và những chuyển đổi này có thể được sử dụng để giải quyết nhiều vấn đề kỹ thuật cụ thể.</p>
+<p>Đây là hai phương pháp rất mạnh mẽ: Phương pháp #1: Làm ngược lại, và Phương pháp #2: Thay đổi trạng thái của tính chất vật lý.</p>
+<p>Trong bất kỳ số nào của Công báo Chính thức, chúng ta có thể tìm thấy các phát minh được tạo ra bằng cách sử dụng các phương pháp này. Ví dụ, Bằng sáng chế số 183122: “Phương pháp dỡ đường thô dạng hạt từ tàu chở dầu.” Để đẩy nhanh quá trình, đường được trộn với nước trước để làm cho nó thành chất lỏng và sau đó được bơm vào xi-lô lưu trữ. Đường lỏng sau đó được sấy khô trở lại thành đường hạt.</p>
+<p>Một ví dụ khác, Bằng sáng chế số 489938, là phương pháp khôi phục đặc tính chảy tự do của vật liệu rời trong kho. Nhà phát minh đề xuất đông lạnh nó thêm bằng nitơ lỏng thay vì phương pháp thông thường là làm nóng bằng hơi nước. Nitơ phá vỡ lớp băng giữa các hạt và sau đó bay hơi thành khí.</p>
+<p>Nhà phát minh đã sử dụng hai phương pháp. Thứ nhất, Làm ngược lại - đông lạnh vật liệu thay vì làm nóng nó. Thứ hai, Thay đổi trạng thái của tính chất vật lý của nitơ. Nitơ ban đầu ở dạng lỏng và sau đó trở thành khí.</p>
+<p>Bây giờ hãy thử một vấn đề mà bạn có thể tự giải quyết.</p>
+<p>Vấn đề 5 Nó có thể tự biến mất</p>
+<p>Trong quá khứ, người ta sử dụng lọ mực không đổ. Nếu chúng ta đổ đầy cát vào lọ mực như vậy, làm thế nào chúng ta có thể loại bỏ cát khỏi lọ mực sau đó? Các kỹ sư đúc từng gặp một vấn đề tương tự. Các bộ phận kim loại rèn cần được làm sạch. Máy phun cát được sử dụng cho mục đích này. Cát làm sạch các bộ phận - và lọt vào các khoang. Bây giờ chúng ta phải loại bỏ cát khỏi các bộ phận. Khi các bộ phận lớn và nặng, rất bất tiện để lật chúng lên và lắc cát ra.</p>
+<p>“Có lẽ chúng ta có thể bằng cách nào đó che tất cả các lỗ,” một kỹ sư đề xuất. “Không, đó là quá nhiều công việc phụ. Tôi không thể thấy giải pháp. Cát không tự ra khỏi các khoang.”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Đúng vậy,” anh ta nói, “cát có thể tự biến mất. Điều chúng ta cần làm là tạo ra các hạt cát từ…”</p>
+<p>Các hạt cát nên được làm từ gì?</p>
+<p>Lưu ý rằng tất cả các vấn đề trước đây thuộc về các lĩnh vực công nghệ khác nhau, nhưng các nhà phát minh đã sử dụng cùng một kỹ thuật để giải quyết chúng: Phương pháp #1: Làm ngược lại và Phương pháp #2: Thay đổi trạng thái của tính chất vật lý.</p>
+<p>Đây là một vấn đề nữa:</p>
+<p>Vấn đề 6 Có một bằng sáng chế</p>
+<p>Cần phải tạo ra nhiều lỗ đường kính 10mm trong một ống cao su. Không khó để đục hoặc khoan các lỗ, ngoại trừ việc ống rất linh hoạt. Nó kéo dãn, co lại và uốn cong. Vì vậy, việc tạo ra các lỗ một cách chính xác là một nhiệm vụ phức tạp. Người giám sát đã cố gắng đốt các lỗ bằng một thanh sắt nóng nhưng các cạnh của những lỗ này không đều và dễ vỡ.</p>
+<p>“Không thể làm gì được! Thật khó chịu!” người giám sát kêu lên, gần như khóc.</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Đừng khóc!” anh ta nói. “Nó rất đơn giản! Có một Bằng sáng chế Anh số 1268562 trong đó nhà phát minh đề xuất…”</p>
+<p>Bằng sáng chế đó có gì? Hãy suy nghĩ về nó.</p>
+<p>Bạn đã làm quen với chỉ một vài phương pháp. Có khoảng một trăm phương pháp, một số đáng ngạc nhiên và khéo léo. Bạn sẽ đồng ý với tôi sau khi bạn giải quyết một vấn đề khác.</p>
+<p>Vấn đề 7 Họ là những thám tử kiểu gì vậy?</p>
+<p>Một công ty mua dầu hướng dương. Việc giao hàng được thực hiện bằng xe bồn. Mỗi xe bồn có sức chứa 3000 lít. Người mua đột nhiên phát hiện ra rằng mỗi lần xe bồn được dỡ hàng, có sự thiếu hụt gần 30 lít. Người mua đã kiểm tra các thiết bị đo lường và tất cả đều hoạt động tốt. Anh ta kiểm tra các dấu niêm phong trên cửa hầm phía trên và sự rò rỉ của bồn chứa. Không có gì sai. Anh ta thậm chí đã xem xét lớp màng dầu mỏng trên các thành bên trong của bồn cũng như sự thay đổi trong nhiệt độ của dầu. Không có gì có thể giải thích được sự khác biệt.</p>
+<p>Một số thám tử có kinh nghiệm được yêu cầu điều tra vấn đề và họ không tìm thấy gì. Xe tải không bao giờ dừng lại trong quá trình giao hàng và tài xế không bao giờ đổ dầu ra khỏi bồn. Ngay cả các thám tử cũng bối rối.</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Các anh là thám tử kiểu gì vậy?” anh ta hỏi. “Tất cả rất đơn giản. Chúng ta phải suy nghĩ một chút.” Rồi anh ta giải thích điều gì đang xảy ra.</p>
+<p>Bạn nghĩ điều gì đang xảy ra?</p>
+<p>Vấn đề này đã được đăng trên một tạp chí thanh niên. Nhà xuất bản nhận được hàng nghìn lá thư từ học sinh trường phổ thông và đại học, và thậm chí từ các kỹ sư. Tác giả của hai lá thư là cảnh sát. Có cả núi thư, nhưng không ai có câu trả lời đúng.</p>
+<p>Các thám tử có thể dễ dàng khám phá ra bí mật nếu họ biết một trong những thủ thuật của nhà phát minh: Nếu không thể làm ngay bây giờ, nó nên được làm trước.</p>
+<p>Hóa ra tài xế đã treo một cái xô bên trong bồn khi nó còn trống. Nhà cung cấp đổ đầy dầu vào xe bồn. Đồng thời, xô cũng được đổ đầy. Xe tải đi đến địa điểm của người mua và được dỡ hàng. Xô đầy dầu vẫn treo bên trong bồn, và tài xế của xe tải sau đó lấy nó ra.</p>
+<p>Đây là Phương pháp #3: Làm trước. Nó thường được sử dụng bởi các nhà phát minh.</p>
+<p>Hãy xem xét một vấn đề trong y học. Một bó bột rất khó tháo ra mà không chạm vào da. Một nhà phát minh đã đề xuất chèn một ống cao su chứa một lưỡi cưa mỏng bên dưới lớp bột. Khi đến lúc tháo bỏ bó bột, bác sĩ lấy một khung cưa tay, kết nối nó với các đầu của lưỡi cưa, và cắt lớp bột từ bên trong ra ngoài.</p>
+</section>
+<section id="chương-3-các-mâu-thuẫn-kỹ-thuật" class="level2">
+<h2 class="anchored" data-anchor-id="chương-3-các-mâu-thuẫn-kỹ-thuật">Chương 3 Các mâu thuẫn kỹ thuật</h2>
+<p>Cho đến nay chúng ta đã học được ba phương pháp hay thủ tục. Bạn có thể nghĩ rằng điều này sẽ đơn giản - chỉ cần học hàng trăm phương pháp và bạn có thể giải quyết bất kỳ vấn đề nào. Đáng tiếc là nó phức tạp hơn nhiều. Hãy xem xét ví dụ sau:</p>
+<p>Có những máy làm ống thép hàn có đường kính lớn. Trong xưởng, công nhân treo những cuộn băng thép lớn. Đầu của băng này được đưa vào máy, máy biến băng thành ống. Ống hàn ra khỏi máy với tốc độ hai feet mỗi giây. Mọi thứ đều ổn, ngoại trừ việc ống phải được cắt theo một độ dài cụ thể.</p>
+<p>Giả sử chúng ta cần làm những ống dài 12 feet. Điều này có nghĩa là cứ sau sáu giây phải cắt một ống. Một lưỡi cắt đĩa quay bắt đầu cắt ống ngay khi ống đạt đến 12 feet. Lưỡi cắt di chuyển cùng với ống khi nó ra khỏi máy. Sau khi cắt ống, lưỡi cắt quay trở lại điểm xuất phát. Toàn bộ quá trình này cần được hoàn thành trong chưa đầy sáu giây.</p>
+<p>Để cắt ống nhanh hơn, cần có một cơ chế cắt rất mạnh mẽ. Vì một cơ chế như vậy phải lớn và nặng, nó sẽ mất tốc độ khi di chuyển dọc theo ống. Nếu chúng ta làm cho cơ chế cắt nhẹ hơn và nhỏ hơn để tăng tốc độ, nó không thể cắt ống nhanh như cần thiết. Điều này tạo thành một vòng luẩn quẩn.</p>
+<p>Để giải quyết loại vấn đề này, các kỹ sư thường sử dụng giải pháp thỏa hiệp. Kết quả của sự thỏa hiệp như vậy là cơ chế cắt không cắt nhanh cũng không di chuyển nhanh, vì vậy ống ra khỏi máy chậm hơn 1,5 lần so với cần thiết - một tình huống rất đáng thất vọng.</p>
+<p>Có lẽ bạn đã tìm ra giải pháp: Làm trước - cắt băng thép trước khi nó đến máy. Tuy nhiên, điều này sẽ không giải quyết được vấn đề vì bây giờ chúng ta sẽ mất thời gian nạp máy cho mỗi ống. Năng suất cao của máy hàn ống này phụ thuộc vào một quá trình liên tục không bị gián đoạn.</p>
+<p>Vấn đề này đã không được giải quyết trong một thời gian dài. Bằng cách sử dụng các thủ thuật khác nhau, các kỹ sư đã tăng tốc độ của lưỡi cắt nhưng mất độ chính xác của chiều dài ống. Một số ống ra dài hơn, số khác ngắn hơn. Một hệ thống điện tử phức tạp đã được thiết kế và độ chính xác tăng lên - cùng với chi phí sản xuất và bảo trì.</p>
+<p>Nhà Phát minh xuất hiện, tất nhiên, và đề xuất sử dụng hai phương pháp: Phương pháp #3: Làm trước và Phương pháp #4: Làm ít hơn một chút.</p>
+<p>Ý nghĩa của phương pháp thứ tư là: Nếu một hành động không thể thực hiện hoàn toàn, nó phải được thực hiện một phần. Điều này có nghĩa là băng thép nên được khắc rãnh, không phải cắt đứt. Sau khi ống được hàn đến độ dài yêu cầu, một cú giật nhẹ sẽ đủ để tách nó khỏi ống tiếp theo. Đó là một giải pháp tuyệt vời, phải không? Lưỡi cắt đĩa “bay” bị loại bỏ hoàn toàn. Ống đi qua một nam châm điện. Một xung dòng điện, một cú đứt gãy nhanh, và ống được tách ra.</p>
+<p>Như bạn có thể thấy, “mánh khóe” là có sự kết hợp của hai phương pháp. Riêng lẻ, hai phương pháp sẽ không mang lại kết quả cần thiết.</p>
+<p>Mười nghìn kết hợp hai phương pháp có thể được tạo ra từ một trăm phương pháp riêng lẻ! Bạn có thể tưởng tượng số lượng giải pháp chúng ta có thể đạt được nếu chúng ta sử dụng kết hợp ba, bốn hoặc năm phương pháp. Vì vậy, hãy ngừng giải quyết vấn đề bằng cách sắp xếp các giải pháp khác nhau hoặc sử dụng phương pháp thử và sai.</p>
+<p>Một số phương pháp giải quyết đã được biết đến ngay cả vào cuối thế kỷ 19. Các chuyên gia khác nhau từ đó đã lập danh sách cụ thể 20 đến 30 phương pháp. Nếu chúng ta tiến thêm một bước nữa - không chỉ thêm các phương pháp mới mà còn phân loại và kết hợp chúng - chúng ta có thể giải quyết nhiều vấn đề hơn nữa.</p>
+<p>Người ta nhận thấy rằng các phương pháp đơn lẻ chỉ có thể được sử dụng trong các lĩnh vực hạn chế. Do đó, vẫn khó để loại bỏ phương pháp thử và sai.</p>
+<p>Nếu chúng ta thử nhìn các vấn đề kỹ thuật từ một góc độ khác để hiểu cách các vấn đề phát sinh thì sao? Định nghĩa của một “vấn đề phát minh” hay “vấn đề kỹ thuật” là gì?</p>
+<p>Hãy nhìn lại vấn đề của máy làm ống. Đó là một máy phức tạp với nhiều hệ thống và bộ phận cơ khí. Khi hiệu quả của một hệ thống được tăng lên - máy hàn ống kim loại - toàn bộ trở nên hiệu quả hơn. Tuy nhiên, ngay lập tức một mâu thuẫn kỹ thuật xuất hiện: Máy hàn ống nhanh hơn nhiều so với khả năng cơ chế cắt có thể cắt ống.</p>
+<p>Để giải quyết vấn đề mới này - càng hàn nhanh, quá trình cắt càng khó khăn - một nỗ lực đã được thực hiện để tăng công suất của cơ chế cắt. Một lần nữa, một mâu thuẫn kỹ thuật xuất hiện: Để tăng tốc độ cắt ống, cần có một cơ chế cắt phức tạp và nặng hơn. Tất nhiên, cơ chế cắt nặng hơn và phức tạp hơn này di chuyển chậm hơn dọc theo ống, một lần nữa làm chậm toàn bộ quá trình.</p>
+<p>Các hệ thống kỹ thuật tương tự như các sinh vật sống. Chúng bao gồm các bộ phận có liên quan với nhau. Thay đổi một phần của hệ thống có thể có tác động tiêu cực đến các phần khác của hệ thống.</p>
+<p>Một cải tiến trong một phần của hệ thống làm suy giảm các phần khác của hệ thống hoặc các hệ thống liền kề tạo ra một Mâu thuẫn Kỹ thuật - và việc tạo ra một phát minh đòi hỏi phải loại bỏ các Mâu thuẫn Kỹ thuật.</p>
+<p>Một giải pháp phát minh luôn có hai yêu cầu: (1) Cải thiện một phần hoặc đặc điểm duy nhất của hệ thống mà không (2) làm suy giảm các phần hoặc đặc điểm khác của hệ thống hoặc các hệ thống liền kề.</p>
+<p>Vấn đề 8 Phương tiện cho hành tinh Sao Hỏa</p>
+<p>Trong một câu chuyện khoa học viễn tưởng về khám phá không gian, một cuộc thám hiểm đến Sao Hỏa đã được mô tả. Tàu vũ trụ hạ cánh trong một thung lũng đá và các phi hành gia nhanh chóng chuẩn bị phương tiện của họ cho chuyến đi trên bề mặt hành tinh. Phương tiện đặc biệt này được thiết kế với những lốp xe bơm phồng lớn. Ngay trên những bước đầu tiên trên một sườn dốc, phương tiện đã bị lật.</p>
+<p>Và đột nhiên… Không, đáng tiếc là Nhà Phát minh không thể xuất hiện trong câu chuyện này. Bạn nghĩ Nhà Phát minh sẽ đề xuất điều gì?</p>
+<p>Hãy nhớ rằng các phi hành gia không có cách nào thay đổi lốp xe.</p>
+<p>Vấn đề này cũng đã được đăng trên một tạp chí thanh niên. Trong phần lớn các lá thư nhận được, câu trả lời là treo một trọng lượng nặng bên dưới phương tiện. Trọng tâm của phương tiện sẽ trở nên thấp hơn và tăng tính ổn định của phương tiện.</p>
+<p>Đừng vội vàng diễn đạt ý tưởng của bạn. Hãy phân tích các đề xuất khác trước. Bây giờ chúng ta có một tiêu chí để đánh giá. Mâu thuẫn kỹ thuật đã được loại bỏ hay chưa?</p>
+<p>Trọng lượng treo bên dưới phương tiện sẽ tăng tính ổn định nhưng đồng thời sẽ làm giảm khả năng di chuyển của nó. Khoảng sáng gầm xe sẽ ít hơn và khiến trọng lượng va chạm với đá và mặt đất thường xuyên hơn. Một mâu thuẫn kỹ thuật!</p>
+<p>Đây là một số ý tưởng và đề xuất khác: a. Xả một phần hơi của lốp xe, để chúng chỉ đầy một nửa. b. Lắp thêm một lốp xe ở mỗi bên của phương tiện. c.&nbsp;Có một số thành viên trong đoàn nghiêng ra ngoài phương tiện để duy trì cân bằng…</p>
+<p>Không quá khó để thấy rằng trong mỗi ý tưởng này, chúng ta đạt được điều gì đó trong khi mất đi điều gì đó khác. Xả hơi lốp xe làm giảm tốc độ của phương tiện. Thêm lốp xe làm cho phương tiện phức tạp hơn - và chúng ta không có phương tiện để làm điều đó trên Sao Hỏa. Yêu cầu các phi hành gia thực hiện các động tác nhào lộn là một rủi ro không thể biện minh. Do khó tránh được các mâu thuẫn, một trong những độc giả đã viết: “Không có gì có thể làm được. Hãy để các phi hành gia đi bộ.”</p>
+<p>Bạn có thể tưởng tượng một thủy thủ không biết rằng cần phải tránh các rạn san hô và vách đá không? Nhà phát minh giống như thủy thủ đó khi anh ta không biết rằng anh ta phải loại bỏ mâu thuẫn kỹ thuật.</p>
+<p>Bạn có nhớ vấn đề về đo áp suất bên trong bóng đèn điện không? Ý tưởng đập vỡ bóng đèn đã được cấp bằng sáng chế, mặc dù trong thực tế một phát minh đã không được tạo ra vì mâu thuẫn không được loại bỏ. Chúng ta đập vỡ càng nhiều bóng đèn, thử nghiệm càng chính xác và chúng ta sẽ có càng nhiều bóng đèn bị vỡ.</p>
+<p>Đây là bản dịch tiếng Việt của đoạn văn bản:</p>
+<p>Trước khi bạn nói “Tôi đã giải quyết được một vấn đề Phát minh!”, hãy tự hỏi bản thân, “Tôi đã loại bỏ loại mâu thuẫn nào?”</p>
+<p>Không khó để treo một trọng lượng bên dưới phương tiện. Ý tưởng là treo nó càng thấp càng tốt. Bây giờ chúng ta có một vấn đề khác. Một trọng lượng treo thấp sẽ giảm khoảng sáng gầm giữa phương tiện và mặt đất. Mong muốn giải quyết vấn đề này mà không sử dụng “thủ thuật phát minh” sẽ không cải thiện được khả năng di chuyển của phương tiện.</p>
+<p>Hãy thử một phương pháp mới, một thủ thuật mới: Chúng ta sẽ đặt trọng lượng rất thấp, thực tế là ngay sát mặt đất - không phải bên ngoài phương tiện mà ở bên trong. Chúng ta sẽ giấu trọng lượng bên trong - các lốp xe! Chúng ta sẽ chèn các viên bi thép hoặc đá tròn và chúng sẽ lăn…</p>
+<p>Đây là Phương pháp #5, gọi là “Matreshka”. Matreshka là một con búp bê có một con búp bê nhỏ hơn bên trong nó, và một con búp bê khác bên trong con búp bê thứ hai, và cứ tiếp tục như vậy. Để tiết kiệm không gian, có thể đặt một vật thể bên trong một vật thể khác.</p>
+<p>Một bằng sáng chế về điều này đã được cấp ở Nhật Bản để cải thiện sự ổn định của xe nâng hàng và cần cẩu tự hành.</p>
+<p>Vấn đề và câu trả lời giống như hai bờ của một con sông. Một nỗ lực đoán câu trả lời giống như nhảy từ bờ này sang bờ kia của con sông. Các mâu thuẫn kỹ thuật và phương pháp loại bỏ chúng hoạt động như một cây cầu. Lý thuyết giải quyết vấn đề kỹ thuật tương tự như khoa học xây dựng những cây cầu vô hình mang những suy nghĩ dẫn đến ý tưởng mới.</p>
+<p>Nhân tiện, mâu thuẫn và phương pháp nên được so sánh với các cột trụ của cây cầu. Không dễ để nhảy từ cột này sang cột khác. Ngoài các cột, chúng ta cần các tấm ván trên cùng để có thể đi bộ từ bên này sang bên kia. Chúng ta cần một cách tiếp cận đặc biệt để đi từ nhiệm vụ đến mâu thuẫn và từ mâu thuẫn đến phương pháp (thủ thuật). Sau đó, chúng ta có thể đi từng bước từ phát biểu vấn đề đến câu trả lời.</p>
+<p>Chúng ta sẽ nói thêm về các phần của cây cầu sau. Điều rất quan trọng cần hiểu là:</p>
+<p>Nhà phát minh phải tìm và loại bỏ các mâu thuẫn kỹ thuật.</p>
+<p>Lý thuyết giải quyết vấn đề kỹ thuật bắt đầu với phát biểu rất đơn giản này.</p>
+</section>
+<section id="chương-4-hãy-tự-suy-nghĩ" class="level2">
+<h2 class="anchored" data-anchor-id="chương-4-hãy-tự-suy-nghĩ">Chương 4 Hãy tự suy nghĩ</h2>
+<p>Cho đến nay bạn đã học được năm phương pháp giải quyết các vấn đề khác nhau:</p>
+<ol type="1">
+<li>Làm ngược lại</li>
+<li>Thay đổi trạng thái của tính chất vật lý</li>
+<li>Làm trước</li>
+<li>Làm ít hơn một chút</li>
+<li>“Matreshka”</li>
+</ol>
+<p>Bạn cũng đã học được rằng các hiệu ứng và hiện tượng vật lý có thể được sử dụng trong các phương pháp mô tả ở trên. Và cuối cùng, bạn có một chỉ số rất đáng tin cậy để đánh giá ý tưởng của mình. Một ý tưởng phát minh tốt chắc chắn sẽ loại bỏ các mâu thuẫn.</p>
+<p>Tôi sẽ đưa cho bạn một số bài toán làm bài tập. Hãy nhớ, đừng sắp xếp các ý tưởng. Hãy sử dụng các phương pháp bạn đã học, tức là các hiệu ứng vật lý và kiến thức về mâu thuẫn.</p>
+<p>Vấn đề 9 Một cái tốt bằng nhiều cái</p>
+<p>Có một lần trong phòng thí nghiệm, một thiết bị được xây dựng để nghiên cứu chuyển động của các giọt phân bón lỏng sẽ được phun từ máy bay. Không khí chảy qua một ống mang hàng triệu giọt nhỏ. Tuy nhiên, thiết bị này chỉ tạo ra những giọt rất nhỏ.</p>
+<p>Trong quá trình thí nghiệm, người ta nhận thấy rằng các giọt có kích thước lớn hơn cũng cần được kiểm tra.</p>
+<p>“Hãy mua một vài thiết bị,” một kỹ sư đề xuất.</p>
+<p>“Sẽ mất nhiều thời gian hơn chúng ta có. Ngoài ra, nó quá đắt,” một kỹ sư khác phản đối. “Hai mươi thử nghiệm sẽ đòi hỏi hai mươi vòi phun khác nhau.”</p>
+<p>Và, tất nhiên, Nhà Phát minh đột nhiên xuất hiện.</p>
+<p>“Một vòi phun sẽ hoạt động tốt như nhiều vòi phun khác nhau,” anh ta nói. “Kích thước của các giọt có thể được thay đổi nếu…”</p>
+<p>Anh ta giải thích nên làm gì.</p>
+<p>Bạn nghĩ sao?</p>
+<p>Có lẽ vấn đề #9 có vẻ đơn giản với bạn. Mặc dù một vài vấn đề tiếp theo phức tạp hơn, tôi nghĩ bạn sẽ giải quyết được chúng.</p>
+<p>Vấn đề 10 Làm cho nước mềm hơn</p>
+<p>Có lần, một huấn luyện viên nổi tiếng - một cựu vô địch nhảy cầu - than phiền với đồng nghiệp: “Ngày nay khó làm việc quá. Các cú nhảy ngày càng trở nên phức tạp hơn. Chúng ta phải nghĩ ra các kết hợp mới và thử chúng. Vấn đề là số lượng các cú tiếp đất không thành công đã tăng lên, gây thương tích cho các vận động viên nhảy cầu. Nước không mềm lắm khi bạn rơi từ một tháp cao. Đôi khi tôi cảm thấy một vận động viên có thể thực hiện những cú nhảy mới, nhưng thường sợ bị thương và không thể tham gia cuộc thi.”</p>
+<p>“Chúng ta không thể làm gì được,” đồng nghiệp của anh ta nói. “Đây là bản chất của môn thể thao mà chúng ta cam kết. Trong đội của tôi cũng có các chấn thương trong các cú nhảy không thành công.”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Sẽ không còn thương tích nữa. Chúng ta sẽ làm cho nước mềm hơn. Điều chúng ta cần làm là…”</p>
+<p>Bạn nghĩ chúng ta cần làm gì với nước để làm cho nó mềm hơn và loại bỏ thương tích trong các cú nhảy?</p>
+<p>Vấn đề 11 Sơn vĩnh cửu</p>
+<p>Chủ tịch của một công ty nội thất nói với kỹ sư của mình: “Trong năm qua, chúng ta đã bán một trăm bộ nội thất cho các trường mẫu giáo. Đáng tiếc là khách hàng đang phàn nàn rằng bọn trẻ đã bóc hoặc làm xước lớp sơn trên đồ nội thất!”</p>
+<p>“Đây không phải là vấn đề của chúng ta!” kỹ sư nói, có vẻ bị xúc phạm. “Bạn có thể làm xước ngay cả lớp sơn cứng nhất. Điều này không liên quan gì đến chúng ta. Có lẽ họ nên mua đồ nội thất chưa hoàn thiện.”</p>
+<p>“Không,” chủ tịch nói. “Có đồ nội thất màu sắc trong trường mẫu giáo là tốt. Có lẽ chúng ta có thể tìm một loại sơn sẽ thấm sâu vào bên trong gỗ?”</p>
+<p>“Đây là một ảo tưởng!” kỹ sư cười. “Hàng nghìn lần người ta đã cố gắng thấm sơn vào gỗ với kết quả rất kém. Bạn biết điều đó.”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Không, đây không phải là ảo tưởng!” anh ta kêu lên. “Cần một chút sáng tạo và can đảm để giải quyết vấn đề này. Thủ thuật là…”</p>
+<p>Bạn nghĩ thủ thuật là gì?</p>
+</section>
+<section id="chương-5-chồng-chéo-cái-không-thể-chồng-chéo-kết-hợp-cái-không-thể-kết-hợp" class="level2">
+<h2 class="anchored" data-anchor-id="chương-5-chồng-chéo-cái-không-thể-chồng-chéo-kết-hợp-cái-không-thể-kết-hợp">Chương 5 Chồng chéo cái không thể chồng chéo (Kết hợp cái không thể kết hợp)</h2>
+<p>Con cáo bị săn đuổi, nếu bạn tin Bá tước Munchausen, đã tìm ra cách nhảy ra khỏi chính bộ da của mình. Hãy để câu chuyện săn bắn này cho lương tâm của Bá tước. Đồng thời, chúng ta đã giải quyết một vấn đề phát minh. Chúng ta tìm kiếm một câu trả lời, tìm thấy các mâu thuẫn kỹ thuật và ngay khi có vẻ như câu trả lời đã ở trong tầm tay - đột nhiên câu trả lời biến mất!</p>
+<p>Ngay cả khi bạn nắm chắc mâu thuẫn kỹ thuật trong tay, không có gì đảm bảo rằng bạn sẽ tìm ra câu trả lời. Cùng một mâu thuẫn kỹ thuật có thể được loại bỏ bằng cách sử dụng các phương pháp khác nhau.</p>
+<p>Khi chúng ta không thể tìm thấy câu trả lời, đó là vì chúng ta đã bỏ qua một bước. Bước này là ở trung tâm của mọi phát minh thực sự. Ẩn sau mọi mâu thuẫn kỹ thuật là một mâu thuẫn vật lý.</p>
+<p>Nó trông như thế này: Một phần của hệ thống kỹ thuật phải có đặc tính “A” để thực hiện một hành động nhất định, và nó cũng phải có đặc tính trái ngược “không-A” để thực hiện hành động ngược lại.</p>
+<p>Một Mâu thuẫn Kỹ thuật thường liên quan đến toàn bộ hệ thống, hoặc một vài phần của hệ thống. Một Mâu thuẫn Vật lý chỉ liên quan đến một phần của hệ thống.</p>
+<p>Hiểu được phát biểu này sẽ làm tăng đáng kể cơ hội của bạn để đạt được câu trả lời đúng.</p>
+<p>Hãy xem xét Vấn đề #5 - loại bỏ cát khỏi các bộ phận đúc. Mâu thuẫn vật lý trong vấn đề này là: “Các hạt phải cứng để làm sạch các bộ phận, và đồng thời không cứng (lỏng hoặc khí) để có thể loại bỏ khỏi khu vực bên trong các bộ phận”. Ngay khi loại mâu thuẫn này được xác định, câu trả lời trở nên rõ ràng. Chúng ta phải áp dụng Phương pháp #2: Thay đổi trạng thái của các tính chất vật lý - và không gì khác! Hãy làm các hạt từ đá khô. Các hạt cứng sẽ làm sạch các bộ phận, và sau đó chuyển thành khí và bay hơi.</p>
+<p>Trong Vấn đề #6, làm thế nào để tạo lỗ trên ống cao su, các mâu thuẫn vật lý gần như giống nhau. Ống phải cứng để có thể khoan lỗ vào nó, và phải mềm để giữ tính đàn hồi. Phương pháp cũng giống nhau. Chúng ta phải đông lạnh ống, hoặc đổ đầy nước vào và đông lạnh nước. Sau khi các lỗ được tạo ra, ống hoặc nước nên được làm nóng.</p>
+<p>Có những quy tắc nhất định cho phép chúng ta, trong quá trình phân tích vấn đề, chuyển từ một mâu thuẫn kỹ thuật sang một mâu thuẫn vật lý. Trong nhiều trường hợp, mâu thuẫn vật lý có thể được xác định từ chính mô tả của vấn đề.</p>
+<p>Vấn đề 12 Các giọt trên màn hình</p>
+<p>Quá trình hàn được nghiên cứu trong một phòng thí nghiệm. Các nhà khoa học quan tâm tìm hiểu cách một thanh kim loại sẽ tan chảy trong một hồ quang điện và cách hồ quang này thay đổi trong quá trình này. Họ bật nguồn, tạo hồ quang và quay phim những gì xảy ra. Khi xem lại đoạn phim, họ thấy rằng chỉ có hồ quang là nhìn thấy được. Hồ quang sáng hơn các giọt kim loại, và do đó không thể nhìn thấy các giọt. Quyết định lặp lại thí nghiệm. Trong thí nghiệm mới, một hồ quang thứ hai được đốt để chiếu sáng các giọt. Một bộ phim được quay lại. Bây giờ chỉ có các giọt được nhìn thấy trên màn hình. Hồ quang ban đầu hoàn toàn không nhìn thấy trên màn hình. Các nhà khoa học băn khoăn, “Chúng ta nên làm gì?”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Một mâu thuẫn vật lý điển hình!” anh ta nói. “Vấn đề là…”</p>
+<p>Đó là loại mâu thuẫn vật lý nào, và làm thế nào chúng ta có thể loại bỏ nó?</p>
+<p>Nếu bạn đã đọc kỹ các điều kiện của vấn đề, bạn có thể dễ dàng xác định mâu thuẫn vật lý. Hồ quang thứ hai phải có mặt để nhìn thấy các giọt kim loại, và nó không được có mặt để nhìn thấy hồ quang đầu tiên.</p>
+<p>Các mâu thuẫn kỹ thuật thường được xác định bằng các thuật ngữ rất nhẹ nhàng. Ví dụ, để tăng tốc độ của một chiếc xe tải, chúng ta cần giảm trọng lượng hàng hóa. Tốc độ mâu thuẫn với trọng lượng. Tuy nhiên, có thể đạt được một giải pháp thỏa hiệp. Trong các mâu thuẫn vật lý, xung đột rất mạnh. May mắn thay, thế giới phát minh có quy luật riêng của nó: “Mức độ xung đột càng cao, việc xác định và loại bỏ nó càng dễ dàng”.</p>
+<p>Hồ quang chiếu sáng các giọt phải có và không được có. Điều này có nghĩa là nó phải có mặt trong một khoảng thời gian nào đó, và không được có mặt trong một khoảng thời gian khác. Bật và tắt, bật và tắt. Trong một số khung hình, chúng ta sẽ thấy các giọt, trong những khung khác chỉ có hồ quang. Trong quá trình chiếu phim, cả hai đối tượng sẽ xuất hiện trên màn hình, và chúng ta sẽ thấy cả hồ quang và các giọt.</p>
+<p>Đây là Phương pháp #6: Tách các đặc tính mâu thuẫn trong không gian hoặc thời gian.</p>
+<p>Bạn có nhớ vấn đề về các ống hàn không? Băng thép được cắt một phần ở một số khu vực và không được cắt ở các khu vực khác. Có một cách khó hơn để chồng chéo cái không thể chồng chéo: Gán một đặc tính cho toàn bộ đối tượng, và đặc tính đối lập cho các phần của nó. Ban đầu, có vẻ như điều này là không thể. Thật vậy, làm thế nào bạn có thể xây dựng một tòa tháp trắng từ các viên gạch đen?</p>
+<p>Hãy lấy ví dụ về dây xích cho xe đạp. Mỗi phần tử của nó đều cứng, nhưng toàn bộ dây xích lại linh hoạt. Tóm lại, các mâu thuẫn vật lý đòi hỏi chúng ta phải chồng chéo cái không thể chồng chéo không dẫn đến ngõ cụt. Ngược lại, chúng tạo điều kiện và làm dễ dàng quá trình tìm kiếm giải pháp tốt nhất.</p>
+<p>Một ví dụ khác, hãy xem xét Vấn đề #10 - Làm thế nào để làm nước mềm hơn. Đây là một vấn đề khó. Vẫn chưa rõ phải bắt đầu từ đâu. Hãy thử xác định mâu thuẫn vật lý trước. Hồ bơi phải đầy nước, và đồng thời hồ bơi phải đầy một thứ gì đó mềm hơn để vận động viên nhảy cầu không bị thương trong khi nhảy. Cái gì mềm hơn nước? Khí hoặc không khí. Kết luận là: Hồ bơi phải đầy…</p>
+<p>Có vẻ như chúng ta đã đi vào ngõ cụt. Nước hỗ trợ vận động viên nhảy cầu, nhưng nó “cứng” và nguy hiểm trong khi nhảy. Khí thì mềm, nhưng bạn không thể nhảy vào một hồ bơi chỉ đầy khí hoặc không khí (hồ bơi thực sự là “trống rỗng”). Bây giờ, khi chúng ta tiết lộ mâu thuẫn, chúng ta có thể thấy một tia sáng của câu trả lời. Hãy có cả nước và khí trong hồ bơi. Hãy để vận động viên nhảy cầu nhảy vào hỗn hợp nước và khí - nước có khí. Đây chính xác là cách các nhà phát minh Xô Viết đã nhận được Bằng sáng chế #1127604. Trong bằng sáng chế này, nước được bão hòa với các bọt khí trước khi nhảy. Mâu thuẫn được loại bỏ. (Thậm chí 90% nước vẫn là nước, mặc dù bạn không cảm thấy nó theo cách tương tự).</p>
+<p>Chú ý đến con đường zíc zắc chúng ta đã đi để đạt được giải pháp. Điều kiện tồn tại trước đó cho vấn đề chỉ là sự tồn tại của nước - và do đó câu trả lời không rõ ràng. Chúng ta đi từ nước đến không-nước (không khí). Có vẻ như vấn đề trở nên phức tạp hơn. Bước tiếp theo rất quan trọng: kết hợp nước và không-nước (nước và không khí, cứng và mềm, cứng và linh hoạt, nóng và lạnh).</p>
+<p>Như chúng ta đã nói trước đây, nó có thể được thực hiện - trong một khung thời gian hoặc không gian.</p>
+<p>Dưới đây là bản dịch tiếng Việt của đoạn văn bản:</p>
+<p>Vấn đề 13 Dày và mỏng</p>
+<p>Một nhà máy nhận được đơn đặt hàng sản xuất một lượng lớn tấm kính hình bầu dục dày một milimét. Đầu tiên, các tấm hình chữ nhật được cắt và sau đó các góc được mài thành hình bầu dục theo yêu cầu. Vì kính rất mỏng nên có nhiều tấm bị vỡ.</p>
+<p>“Chúng ta nên làm các tấm dày hơn,” người công nhân nói với người giám sát.</p>
+<p>“Chúng ta không thể,” người giám sát nói. “Chúng ta chỉ có đơn đặt hàng cho các tấm dày 1 mm!”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Mâu thuẫn vật lý!” anh ta kêu lên. “Tấm kính của chúng ta phải vừa dày vừa mỏng. Mâu thuẫn này có thể được tách ra trong một khung thời gian. Tấm kính sẽ dày trong thời gian gia công!”</p>
+<p>Bạn nghĩ gì về điều này?</p>
+<p>Vấn đề 14 Làm thế nào để thoát khỏi ngõ cụt</p>
+<p>Một công ty bắt đầu sản xuất một máy mới. Rất sớm, xưởng gặp phải một vấn đề không mong đợi. Một bộ phận của máy này phải được làm từ một tấm thép đặc biệt. Tấm thép phải được gia nhiệt điện đến 1200°C. Sau đó, tấm thép đã được gia nhiệt sẽ được đặt dưới một máy ép để tạo hình theo yêu cầu. Trong quá trình này, người ta phát hiện ra rằng khi tấm thép được gia nhiệt trên 800°C, nó bị hư hỏng do tác động có hại của không khí.</p>
+<p>Người giám sát lập tức triệu tập một cuộc họp.</p>
+<p>“Tình huống giống như trong một câu chuyện cổ tích. Đi về bên phải gặp rắc rối; đi về bên trái gặp rắc rối còn lớn hơn. Tấm thép phải được gia nhiệt đến 1200°C nếu không nó không thể được tạo hình, và đồng thời nó không thể được gia nhiệt trên 800°C để không làm hỏng bề mặt,” anh ta nói.</p>
+<p>“Rất đơn giản,” một trong những kỹ sư trẻ nhất nói. “Chúng ta sẽ gia nhiệt nó đến 1000°C, nhiệt độ trung gian.”</p>
+<p>“Điều đó không tốt,” người thợ cả phản đối. “Các tấm sẽ bị hư hỏng vì chúng vẫn sẽ được gia nhiệt vượt quá nhiệt độ chấp nhận được của chúng, và việc tạo hình không thể thực hiện được vì nhiệt độ không đủ cao.”</p>
+<p>“Đây là một nhiệm vụ phức tạp,” người giám sát nói. “Chúng ta phải giải quyết vấn đề này ngay bây giờ.”</p>
+<p>Và Nhà Phát minh xuất hiện ở đó.</p>
+<p>“Tôi có giải pháp!” anh ta nói.</p>
+<p>Bạn nghĩ Nhà Phát minh đã đề xuất điều gì?</p>
+<p>Vấn đề 15 Lò xo cứng đầu</p>
+<p>Hãy tưởng tượng rằng bạn phải nén một lò xo xoắn dài 4” và đường kính 2”, đặt nó bên trong một cuốn sách và đóng sách lại theo cách mà lò xo sẽ không bung ra nhưng vẫn sẵn sàng mở rộng bất cứ lúc nào. Một tình huống tương tự đã xảy ra khi các kỹ sư đang lắp ráp một thiết bị. Cần phải nén một lò xo, đặt nó bên trong thiết bị và đóng nắp lại. Làm thế nào để thực hiện điều này?</p>
+<p>“Chúng ta sẽ buộc nó bằng một sợi dây,” một trong các kỹ sư nói. “Nếu không, bạn không thể làm gì được với lò xo cứng đầu này!”</p>
+<p>“Điều này không ổn,” kỹ sư khác phản đối. “Lò xo bên trong thiết bị phải tự do.”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Mọi thứ đều ổn!” anh ta nói. “Lò xo phải tự do và không được tự do, bị nén và không bị nén. Một khi chúng ta có một mâu thuẫn, chúng ta có một nhiệm vụ phát minh.”</p>
+<p>Bạn sẽ giải quyết vấn đề này như thế nào?</p>
+</section>
+<section id="phần-2-kỷ-nguyên-của-các-hệ-thống-kỹ-thuật" class="level2">
+<h2 class="anchored" data-anchor-id="phần-2-kỷ-nguyên-của-các-hệ-thống-kỹ-thuật">Phần 2 Kỷ nguyên của các Hệ thống Kỹ thuật</h2>
+</section>
+<section id="chương-6-thuyền-thuyền" class="level2">
+<h2 class="anchored" data-anchor-id="chương-6-thuyền-thuyền">Chương 6 Thuyền + Thuyền</h2>
+<p>Trong nhiều cuốn sách về lịch sử phát triển kỹ thuật, thế kỷ 19 được gọi là “Thế kỷ của Hơi nước”. Các nhà sử học trong nửa đầu thế kỷ này gọi đây là “Thế kỷ của Điện”. Tên gọi nào phù hợp dựa trên những phát triển trong nửa sau của thế kỷ chúng ta? Cho đến nay chúng ta chưa có một ý kiến thống nhất. Có thể là: “Thế kỷ của Nguyên tử”, hoặc “Thế kỷ của Khám phá Không gian”. Có lẽ là “Thế kỷ của Hóa học”? Hoặc… “Điện tử”?</p>
+<p>Nếu một kỹ sư sống vào đầu thế kỷ 20 có thể nhìn thấy cuộc sống của chúng ta ngày nay, có lẽ kỹ sư đó sẽ ngạc nhiên trước số lượng máy móc quen thuộc. Những máy móc này chủ yếu khác biệt về quy mô so với tổ tiên của chúng. Ô tô có kích thước của xe ngựa đã trở thành những xe đầu kéo lớn. Một máy bay chỉ có thể chở hai hoặc ba người đã trở thành máy bay chở khách chở 300 đến 400 người. Tàu thủy đã trở thành những thành phố nổi. Tuabin, cần cẩu, tòa nhà, phòng thí nghiệm nghiên cứu - mọi thứ đã trở nên lớn hơn gấp mười lần.</p>
+<p>Hàng chục chiếc xe tải cũ trong quá khứ giờ đây tương đương với một xe tải siêu lớn chở tổng tải trọng của chúng. Đúng vậy, tổng trọng lượng là như nhau nhưng việc bảo dưỡng và bảo trì một xe tải siêu lớn cần ít người hơn. Việc bốc dỡ hàng hóa cũng mất ít thời gian hơn nhiều. Nhiều vấn đề phát minh ngày nay đã xuất hiện do sự phát triển này.</p>
+<p>Hãy xem xét một vấn đề liên quan:</p>
+<p>Vấn đề 16 Hạ cánh khẩn cấp</p>
+<p>Một máy bay vận tải khổng lồ đã hạ cánh khẩn cấp trên một cánh đồng cách sân bay 200 dặm. Máy bay được dỡ hàng và kiểm tra. Người ta phát hiện các vết nứt, vết lõm và hư hỏng bên ngoài. Cần phải di chuyển máy bay đến xưởng để sửa chữa. Vì máy bay nặng hơn một trăm tấn, nó phải được đưa đến xưởng một cách cẩn thận để tránh thiệt hại thêm. Các chuyên gia tụ họp lại. Sẽ không phải là một vấn đề lớn nếu máy bay nhỏ hơn.</p>
+<p>“Chúng ta không nên suy nghĩ quá nhiều,” một học viên thực tập nói.</p>
+<p>Không ai mời cậu ta đến cuộc họp, nhưng cậu ta vẫn đến. Cậu ta có một ý tưởng và muốn trình bày nó. “Không có gì chúng ta có thể làm mà không cần một khinh khí cầu. Chúng ta phải móc máy bay vào khinh khí cầu và…”</p>
+<p>“Chàng trai trẻ,” một trong các chuyên gia buồn bã nói. “Chúng ta không có khinh khí cầu có khả năng đó. Hơn nữa, chúng ta không thể nâng máy bay lên không trung. Vậy nên, hãy quên khinh khí cầu đi.”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Bạn sai rồi,” anh ta nói. “Chúng ta cần một khinh khí cầu, và chúng ta không cần một khinh khí cầu. Chúng ta phải nâng máy bay - và chúng ta không cần phải nâng nó!”</p>
+<p>Sau đó anh ta giải thích cách chúng ta có thể giải quyết những yêu cầu mâu thuẫn này.</p>
+<p>Bạn có thể đoán Nhà Phát minh đã đề xuất điều gì không?</p>
+<p>Kích thước của máy móc đã tăng nhanh chóng. Chúng đã tăng gấp đôi, gấp mười, và thậm chí gấp trăm lần.</p>
+<p>Tuy nhiên, sự tăng trưởng không phải là vô hạn. Đến một lúc nào đó, việc tăng trưởng thêm nữa sẽ vừa không kinh tế vừa không có lợi. Tại thời điểm đó, nếu hai máy được kết hợp lại với nhau, một hệ thống mới xuất hiện. Hệ thống mới này sau đó bắt đầu phát triển và tiến hóa giống như các máy riêng lẻ trước đó.</p>
+<p>Hãy nhớ lại lịch sử phát triển của tàu thủy. Chiếc thuyền đầu tiên được chèo bởi hai mái chèo. Chiếc tàu đầu tiên có một hàng mái chèo. Sau đó, những con tàu lớn hơn có hai, ba và bốn hàng mái chèo.</p>
+<p>Ở La Mã cổ đại, một con tàu được xây dựng với ba mươi hàng mái chèo! Rất khó để những người chèo phối hợp chuyển động của họ. Hơn nữa, các mái chèo dài và nặng. Khoảng cách giữa hàng mái chèo trên cùng và mặt nước hơn 60 feet.</p>
+<p>Sau đó, mọi người bắt đầu xây dựng những con tàu bao gồm cả mái chèo và cánh buồm. Theo thời gian, kích thước của tàu tăng lên và số lượng và kích thước của cánh buồm tăng lên thay vì số lượng mái chèo. Dần dần, tàu chèo-buồm biến thành tàu buồm-chèo, và sau đó thành tàu buồm. Sau đó thiết bị buồm bắt đầu phát triển. Đầu tiên có một cột buồm, rồi hai cột buồm và cứ tiếp tục như vậy. Kích thước của cánh buồm tăng lên cũng như số lượng cánh buồm trên mỗi cột buồm.</p>
+<p>Sau đó đến bước tiếp theo: Động cơ hơi nước được phát triển và con tàu buồm-hơi nước đầu tiên được xây dựng. Sau đó quá trình lặp lại một lần nữa. Tàu buồm-hơi nước biến thành tàu hơi nước-buồm, và sau đó thành tàu hơi nước.</p>
+<p>Mỗi khi hệ thống A kết hợp với hệ thống B, một hệ thống mới AB xuất hiện. Hệ thống mới AB này, về nguyên tắc, có những đặc điểm mới - những phẩm chất mới mà cả A và B đều không có trước đó. Ngay cả khi một hệ thống mới được hình thành từ việc đơn giản A + B, kết quả không bằng 2A, mà là một cái gì đó lớn hơn. Ví dụ: Một thuyền cộng một thuyền kết hợp thành một hệ thống không bằng hai thuyền. Đó là một catamaran. Hệ thống catamaran ổn định hơn so với hai thuyền riêng biệt.</p>
+<p>Đặc điểm rất quan trọng này của hệ thống có thể dễ dàng được thấy trong vấn đề tiếp theo về bọ đục.</p>
+<p>Vấn đề 17 Nhiệt kế cho bọ đục</p>
+<p>Có một lần, các nhà khoa học tụ họp để thảo luận về một vấn đề liên quan đến bọ đục. Người ta phát hiện ra rằng các điều kiện tồn tại của loài bọ nhỏ này đã được nghiên cứu rất ít. Không ai biết, ví dụ, nhiệt độ cơ thể của một con bọ đục là bao nhiêu.</p>
+<p>“Bọ đục rất nhỏ,” một nhà khoa học nói, “nhưng chúng ta không thể đặt nhiệt kế vào nó.”</p>
+<p>“Bạn nói đúng,” một nhà khoa học khác đồng ý, “chúng ta phải thiết kế một thiết bị đặc biệt.”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Không cần thiết phải phát triển một thiết bị mới,” anh ta nói. “Hãy lấy một cái thông thường…”</p>
+<p>Bạn nghĩ Nhà Phát minh đã đề xuất điều gì?</p>
+<p>Vấn đề này đã được đăng trên tạp chí Pioneer Youth và chỉ có một từ được thêm vào trong mô tả vấn đề: cốc. Nhà Phát minh nói: “Hãy lấy một cái cốc thủy tinh thông thường…”</p>
+<p>Một nửa số câu trả lời được đưa ra bởi độc giả là: “Lấy một cái cốc, đổ đầy nước, thả bọ đục vào đó và đo nhiệt độ bằng một nhiệt kế thông thường.” Đây không phải là câu trả lời đúng. Một con bọ đục nhỏ không thể thay đổi nhiệt độ của nước. Sự nhầm lẫn nằm ở từ “cốc”; một khi chúng ta có một cái cốc, nó phải được đổ đầy nước vì đây là mục đích chính của nó.</p>
+<p>Đây là một vấn đề phát minh tốt. Từ “cốc” khiến chúng ta suy nghĩ. Do đó, trong Lý thuyết Giải quyết Vấn đề Sáng tạo, có một quy tắc rất quan trọng: Loại bỏ các từ có thể dẫn đến ý tưởng sai lầm. Đây là Phương pháp #7.</p>
+<p>Ví dụ, nếu một “vít có thể điều chỉnh vi mô” được đề cập trong vấn đề, nó nên được thay thế bằng những từ như “một thanh có thể điều chỉnh có chuyển động rất chính xác”. Từ “vít” biến mất, và ngay lập tức trở nên rõ ràng rằng giải pháp có thể không liên quan đến chuyển động xoay ốc vít hoặc thiết bị.</p>
+<p>Trong khi đó, hãy quay lại vấn đề của chúng ta. Cần phải lấy một cái cốc (hoặc hộp nhỏ hoặc túi nhựa), đổ đầy bọ đục vào đó, và đo nhiệt độ bằng một nhiệt kế thông thường. Một trăm con bọ đục sẽ tạo ra một hệ thống có những đặc điểm mới. Kích thước của hệ thống đó lớn hơn nhiều so với kích thước của các bộ phận riêng lẻ của nó. Do đó, sẽ không khó để đo nhiệt độ của bọ đục.</p>
+<p>Trong mỗi số của Công báo Chính thức, chúng ta có thể tìm thấy những đổi mới kỹ thuật được thực hiện bằng cách kết hợp các đối tượng tương tự hoặc khác nhau thành một hệ thống.</p>
+<p>Đây là Phương pháp #8: Kết hợp các đối tượng tương tự hoặc khác nhau thành một hệ thống.</p>
+<p>Ví dụ, hãy xem xét Bằng sáng chế #408586. Nhiều năm trước, các nồi hơi được xếp riêng biệt. Bây giờ chúng được đặt vào một khối. Cấu trúc trở nên đơn giản hơn, chiều dài đường ống được giảm và khối chỉ cần một ống khói.</p>
+<p>Một ví dụ khác: Ngũ cốc trong một xi-lô tỏa ra nhiều nhiệt, do đó cần phải làm mát xi-lô. Chuồng trại cho vật nuôi cần được sưởi ấm. Trong Bằng sáng chế #251801, tác giả đề xuất kết hợp hai công trình này. Nhiệt từ xi-lô giờ đây sưởi ấm chuồng trại.</p>
+<p>Dưới đây là bản dịch tiếng Việt của đoạn văn bản:</p>
+<p>Một ví dụ khác: Nếu chúng ta lấy một thuyền máy và lắp đặt một xe trượt tuyết (hoặc xe máy) lên nó, không có phát minh mới nào. Tuy nhiên, một nhà phát minh người Mỹ đã nhận được Bằng sáng chế số 3935832 cho một phương tiện vừa là thuyền vừa là xe trượt tuyết cùng một lúc. Nó chỉ sử dụng một động cơ, động cơ của xe trượt tuyết. Đây là một hệ thống mới.</p>
+<p>Một thợ săn đôi khi muốn có hai khẩu súng trường với các loại đạn khác nhau - đạn và viên bi. Đi săn với hai khẩu súng trường không thuận tiện. Thợ săn cần sử dụng một khẩu súng và sau đó đột nhiên cần sử dụng khẩu kia. Thường thì thợ săn không có đủ thời gian để chuyển đổi chúng. Nếu hai khẩu súng được buộc lại với nhau thì sao? Trong quá khứ, đó chính xác là những gì mọi người đã làm. Sau đó họ nhận ra rằng hai khẩu súng buộc lại với nhau có nhiều bộ phận chung - và những bộ phận này có thể được loại bỏ. Thật vậy, tại sao khẩu súng kép này cần hai báng súng? Sau khi các bộ phận thừa được loại bỏ, kết quả là khẩu súng hai nòng.</p>
+<p>Một ví dụ khéo léo khác: Các vật liệu thải - tro và xỉ - được tạo ra tại các nhà máy luyện kim và được loại bỏ qua đường ống bằng nước. Một lớp cứng phát triển trên thành bên trong của những đường ống này. Lớp vỏ này thường phải được loại bỏ bằng tay. Các kỹ sư đã cố gắng giải quyết vấn đề này trong một thời gian dài. Các kỹ sư khác cố gắng giải quyết vấn đề khác là bảo vệ bề mặt bên trong của đường ống thải than khỏi bị mài mòn quá mức. Các hạt than sắc nhọn làm xước kim loại, khiến các đường ống khó bảo vệ. Nhà phát minh M. Shampov đề xuất tạo ra một hệ thống đơn chung từ những đường ống này. Đầu tiên, đường ống sẽ bơm bùn tro và xỉ tạo ra lớp vỏ bên trong đường ống, sau đó nó sẽ chuyển sang bùn thải than sẽ làm sạch các đường ống. Chu kỳ sau đó lặp lại. Vấn đề được giải quyết.</p>
+<p>Để tạo ra một hệ thống mới, người ta nên kết hợp các đối tượng theo cách mà một tính năng mới xuất hiện.</p>
+<p>Bây giờ chúng ta sẽ đưa ra một vấn đề khác làm bài tập.</p>
+<p>Vấn đề 18 Cách khác</p>
+<p>Một nhà máy nhận được đơn đặt hàng sản xuất các bộ lọc thủy tinh đường kính một mét và cao hai mét. Các lỗ phải được tạo đều khắp bộ lọc. Các kỹ sư nhìn vào bản vẽ và bị sốc. Hàng nghìn lỗ nhỏ phải được tạo ra trên mỗi bộ lọc.</p>
+<p>“Làm thế nào chúng ta nên tạo ra những lỗ này?” kỹ sư trưởng hỏi cấp dưới. “Chúng ta sẽ khoan chúng sao?”</p>
+<p>“Có lẽ chúng ta nên làm chúng bằng những cây kim dài nung đỏ,” một kỹ sư trẻ nói một cách không chắc chắn.</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Chúng ta không cần mũi khoan hay kim,” anh ta nói. “Mọi thứ nên được làm theo cách khác. Lấy…”</p>
+<p>Bạn nghĩ Nhà Phát minh đã đề xuất điều gì?</p>
+<p>Đây là một gợi ý: Làm theo cách khác. Chúng ta sẽ không tạo lỗ trên xi-lanh, mà tạo xi-lanh từ… lỗ. Lấy các ống thủy tinh, bó chúng lại, và đó là một xi-lanh với các lỗ. Hoặc, lấy các thanh thủy tinh, bó chúng lại, và đó là một bộ lọc với các khe hở giữa các thanh.</p>
+<p>Dễ dàng lắp ráp và tháo rời.</p>
+<p>Nhân tiện, hãy chú ý rằng trong ví dụ này hai phương pháp đã được sử dụng.</p>
+<p>Xi-lanh đặc được thay thế bằng nhiều ống hoặc thanh nhỏ, bó lại với nhau. Đây là Phương pháp Phân mảnh và Hợp nhất.</p>
+<p>Phân mảnh và hợp nhất (cũng như quá trình và phản quá trình) thường được sử dụng trong việc giải quyết các vấn đề phát minh.</p>
+<p>Khi có một mâu thuẫn hai phần - một cái gì đó nên có, và không nên có - có một cách giải quyết hai phần.</p>
+<p>Dưới đây là bản dịch tiếng Việt của đoạn văn bản:</p>
+</section>
+<section id="chương-7-một-số-điều-về-các-hệ-thống" class="level2">
+<h2 class="anchored" data-anchor-id="chương-7-một-số-điều-về-các-hệ-thống">Chương 7 Một số điều về các Hệ thống</h2>
+<p>Nếu con amip có thể nói, nó sẽ nói: “Tổ tiên đơn bào của tôi đã sống trên Trái đất hàng tỷ năm trước. Giờ đây, mọi thứ đều cấu thành từ sự kết hợp của các tế bào đơn. Gỗ chẳng hạn là sự kết hợp của các tế bào. Con người cũng là sự kết hợp của các tế bào. Điều này có nghĩa là Kỷ nguyên của Tế bào vẫn đang tiếp diễn!”</p>
+<p>Với tất cả sự tôn trọng đối với người phát ngôn đơn bào, chúng ta nên phản đối. Gỗ và con người có những đặc điểm khác với các tế bào đơn lẻ. Gỗ cũng như con người đều là các hệ thống của tế bào. Không còn một Kỷ nguyên Tế bào thực sự nữa, mà là một Kỷ nguyên của các Hệ thống.</p>
+<p>Sự phát triển của các hệ thống thông qua việc phát triển và phức tạp hóa là một quy luật phổ quát. Trong thế giới kỹ thuật, sự phát triển đi từ một tế bào đến một hệ thống. Một chiếc ô tô là một tế bào, ngành công nghiệp ô tô là một hệ thống. Một chiếc điện thoại là một tế bào, ngành công nghiệp điện thoại là một hệ thống.</p>
+<p>Khi một tế bào đơn lẻ trở thành một phần của hệ thống, nó hoạt động hiệu quả hơn và phát triển nhanh hơn. Đồng thời, tế bào phụ thuộc vào hệ thống và không thể tồn tại mà không có nó.</p>
+<p>Công nghệ đương đại là công nghệ của các hệ thống. Các “tế bào” của nó là các thiết bị, máy móc và thiết bị khác nhau. Chúng hoạt động bên trong hệ thống. Do đó, một số người trong nửa sau của thế kỷ 20 gọi đây là “Thế kỷ của các Hệ thống Kỹ thuật”.</p>
+<p>Có một sự phân cấp nghiêm ngặt bên trong một hệ thống kỹ thuật. Một bóng đèn điện trong ô tô phụ thuộc vào hệ thống điện của xe. Chiếc xe phụ thuộc vào ngành công nghiệp ô tô, bao gồm hàng triệu xe, đường xá, trạm xăng và trạm sửa chữa.</p>
+<p>Mọi hệ thống kỹ thuật đều có một hệ thống “cấp trên” ở trên (siêu hệ thống) và một hệ thống “cấp dưới” ở dưới (hệ thống con). Bất kỳ thay đổi nào trong một hệ thống phân cấp đều ảnh hưởng đến cả hai hệ thống. Một mâu thuẫn kỹ thuật xuất hiện vì ai đó quên quy luật này. Một phần của hệ thống có lợi thế hơn so với hệ thống “cấp trên” hoặc “cấp dưới” của nó. Do đó, cần phải xem xét lợi ích không chỉ của hệ thống cần được cải thiện mà còn cả lợi ích của các hệ thống con và siêu hệ thống.</p>
+<p>Hãy xem xét một vấn đề cụ thể để học cách xem xét những lợi ích này.</p>
+<p>Vấn đề 19 Hãy làm điều đó mà không cần thần giao cách cảm</p>
+<p>Có một lần, một chiếc xe mới bị chết máy trên đường cao tốc. Người lái xe bối rối cố gắng giải thích với hành khách: “Thật xui xẻo. Tôi hết xăng rồi. Tôi quên nhìn đồng hồ xăng!”</p>
+<p>“Điều đó xảy ra,” người hành khách thông cảm nói. “Hơn nữa, những đồng hồ đó không bao giờ hoạt động chính xác. Bình xăng trống rỗng, nhưng kim chỉ còn xa mốc số không. Sẽ tốt nếu có một bình xăng có thể gửi tín hiệu thần giao cách cảm theo cách nào đó khi xăng gần hết!”</p>
+<p>Và đột nhiên Nhà Phát minh xuất hiện.</p>
+<p>“Có thể làm được mà không cần thần giao cách cảm,” anh ta nói. “Tôi có một ý tưởng…”</p>
+<p>Nhà phát minh đã đề xuất điều gì?</p>
+<p>Hãy phân tích. Ô tô trong trường hợp của chúng ta là một siêu hệ thống. Giải pháp của chúng ta không nên gây nguy hiểm cho bất kỳ “lợi ích” nào của hệ thống đó. Điều này có nghĩa là không nên thay đổi hoặc thiết kế lại bất cứ thứ gì trong ô tô. Điều này điển hình cho bất kỳ siêu hệ thống nào miễn là vấn đề không đòi hỏi những thay đổi mạnh mẽ hoặc thay thế hệ thống đó. Chúng ta sẽ coi đây là một yêu cầu.</p>
+<p>Các hệ thống con cũng có những yêu cầu riêng của chúng. Hệ thống kiểm soát nhiên liệu của xe (hệ thống trung tâm của chúng ta) bao gồm bốn hệ thống con: xăng, bình xăng, một thứ gì đó tạo ra tín hiệu (X - thứ chúng ta sẽ tìm), và đầu của người lái xe. Để bắt đầu, bất kỳ “sửa đổi” nào đối với đầu của người lái xe đều không thể chấp nhận được. Chúng ta cũng không thể xem xét bất kỳ thay đổi nào trong xăng. Còn lại hai hệ thống con: “X” và bình xăng.</p>
+<p>Bây giờ, hãy xem xét điều kiện khi không có xăng trong bình - hoặc gần như không có - và có một tín hiệu từ “X”. Hãy nhớ rằng, bình xăng có một yêu cầu rất đơn giản: Nó không thể bị thay đổi. Vì vậy, kết luận là “X” phải gần như bằng không, nếu không thì bình xăng hoặc ô tô phải được sửa đổi. Ví dụ, “X” không thể là một thiết bị tia X vì nó sẽ làm cho xe phức tạp hơn.</p>
+<p>Đến lúc này, các yêu cầu cho siêu hệ thống, hệ thống và các hệ thống con đã trở nên rõ ràng đến mức chúng ta có thể xác định “X” với độ chính xác toán học. Một chút sau tôi sẽ chỉ cho bạn cách làm điều đó. Hãy tự suy nghĩ về nó bây giờ. Bình xăng trống, hoặc gần như trống, nên gửi một tín hiệu đến đầu của người lái xe. Khi bình đầy xăng, không có tín hiệu. Chỉ có “X” có thể giúp chúng ta đạt được điều này. “X” nên nhỏ đến mức cả xe (siêu hệ thống) lẫn xăng (hệ thống con) đều không yêu cầu bất kỳ thay đổi nào khi nó được đưa vào.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
